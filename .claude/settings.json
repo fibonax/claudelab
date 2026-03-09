@@ -1,0 +1,53 @@
+{
+    "permissions": {
+        "allow": [
+            "Bash(gh issue *)",
+            "Bash(gh pr *)"
+        ],
+        "deny": [
+            "Bash(rm -rf *)"
+        ]
+    },
+    "hooks": {
+        "PreToolUse": [
+            {
+                "matcher": "Bash",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "echo \"$TOOL_INPUT\" | grep -qE '(rm -rf /|rm -rf \\.)' && echo 'BLOCKED: Destructive command detected' && exit 1 || exit 0"
+                    }
+                ]
+            },
+            {
+                "matcher": "Write",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "echo \"$TOOL_INPUT\" | grep -qi 'ailab' && echo 'BLOCKED: Writing the term AILab is not allowed' && exit 2 || exit 0"
+                    }
+                ]
+            },
+            {
+                "matcher": "Edit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "echo \"$TOOL_INPUT\" | grep -qi 'ailab' && echo 'BLOCKED: Writing the term AILab is not allowed' && exit 2 || exit 0"
+                    }
+                ]
+            }
+        ],
+        "Notification": [
+            {
+                "matcher": "",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "echo '\\a'"
+                    }
+                ]
+            }
+        ]
+    }
+}

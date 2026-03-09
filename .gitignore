@@ -1,0 +1,17 @@
+# First time setup
+docs/cclab-complete-guide.md
+product-idea-cclab.md
+
+# Claude Code
+CLAUDE.local.md
+.claude/settings.local.json
+.claude/worktrees/
+
+# Node
+node_modules/
+dist/
+*.tsbuildinfo
+
+# OS
+.DS_Store
+Thumbs.db

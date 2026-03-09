@@ -16,8 +16,10 @@ cclab/
 ├── CLAUDE.md
 ├── README.md
 ├── LICENSE                             # MIT
-├── plugin.json                         # Plugin manifest
 ├── .gitignore
+│
+├── .claude-plugin/
+│   └── plugin.json                     # Plugin manifest (Claude Code plugin API)
 │
 ├── .claude/
 │   ├── settings.json                   # Project permissions & hooks

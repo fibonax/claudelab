@@ -2,7 +2,7 @@
 
 **Priority:** P0
 **Estimated Effort:** 1h
-**Status:** TODO
+**Status:** DONE
 **Dependencies:** None
 **Blocked By:** None
 
@@ -27,10 +27,10 @@ Establish the foundational plugin manifest and exercise directory structure that
 
 ### Acceptance Criteria
 
-- [ ] AC-1: `plugin.json` exists and is valid JSON
-- [ ] AC-2: `plugin.json` includes name, version, description, and lists all 5 learner-facing skills (start, check, hint, status, reset)
-- [ ] AC-3: `exercises/fundamentals/` directory exists
-- [ ] AC-4: Plugin manifest follows Claude Code plugin API conventions (research current spec)
+- [x] AC-1: `plugin.json` exists and is valid JSON
+- [x] AC-2: `plugin.json` includes name, version, description, and lists all 5 learner-facing skills (start, check, hint, status, reset)
+- [x] AC-3: `exercises/fundamentals/` directory exists
+- [x] AC-4: Plugin manifest follows Claude Code plugin API conventions (research current spec)
 
 ### Technical Notes
 

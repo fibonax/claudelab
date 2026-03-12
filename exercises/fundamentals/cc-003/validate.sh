@@ -44,17 +44,24 @@ if [ ! -f "$WORKSPACE/src/utils.ts" ]; then
   exit 1
 fi
 
-# Check 6: utils.ts has no require() calls
-if grep -q "require(" "$WORKSPACE/src/utils.ts"; then
+# Check 6: utils.ts has no require() calls (ignore comments)
+if grep -qE "^[^/]*require\(" "$WORKSPACE/src/utils.ts"; then
   echo "FAIL: src/utils.ts still contains require() calls"
   echo "  Convert all require() to import statements (ES modules)."
   PASS=false
 fi
 
-# Check 7: utils.ts has no var declarations
-if grep -q "var " "$WORKSPACE/src/utils.ts"; then
+# Check 7: utils.ts has no var declarations (ignore comments)
+if grep -qE "^[^/]*\bvar " "$WORKSPACE/src/utils.ts"; then
   echo "FAIL: src/utils.ts still contains var declarations"
   echo "  Replace all var with const (or let where mutation is needed)."
+  PASS=false
+fi
+
+# Check 8: utils.ts has no module.exports (should use ES module exports)
+if grep -q "module\.exports" "$WORKSPACE/src/utils.ts"; then
+  echo "FAIL: src/utils.ts still uses module.exports"
+  echo "  Replace module.exports with ES module export statements (e.g., export { ... })."
   PASS=false
 fi
 

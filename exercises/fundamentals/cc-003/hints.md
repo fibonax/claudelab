@@ -9,10 +9,10 @@ style rules. Add a Code Style section with your conventions.
 
 ## Hint 2
 
-Add `## Code Style` to your CLAUDE.md with rules about imports (`import` not
-`require`) and variable declarations (`const`/`let` not `var`). Then ask
-Claude to fix `src/utils.ts` to match these conventions. Both parts need to
-be done — updating CLAUDE.md AND fixing the code.
+Your CLAUDE.md needs a `## Code Style` section. What rules? Think about the
+three bad patterns in `src/utils.ts`: CommonJS `require()`, `var` declarations,
+and `module.exports`. Once you've written the rules, ask Claude to apply them
+to the code. Both parts need to be done — updating CLAUDE.md AND fixing the code.
 
 ## Hint 3
 
@@ -27,5 +27,6 @@ Add this to CLAUDE.md:
 ```
 
 Then tell Claude: "Fix src/utils.ts to follow the code style rules in
-CLAUDE.md." All `require()` calls should become `import` and all `var`
-should become `const` or `let`.
+CLAUDE.md." All `require()` calls should become `import`, all `var`
+should become `const` or `let`, and `module.exports` should become
+`export { ... }`.

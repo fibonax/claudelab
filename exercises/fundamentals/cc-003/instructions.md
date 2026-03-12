@@ -31,7 +31,8 @@ rules:
 
 After updating CLAUDE.md, ask Claude to fix `src/utils.ts` to follow your
 new conventions. All `require()` calls should become `import` statements,
-and all `var` declarations should become `const` or `let`.
+all `var` declarations should become `const` or `let`, and `module.exports`
+should become ES module `export` statements.
 
 ## Getting Started
 
@@ -71,11 +72,12 @@ Claude to fix the code.
 - CLAUDE.md must mention `const` or `var` (as part of a variable declaration rule)
 - `src/utils.ts` must NOT contain any `require(` calls
 - `src/utils.ts` must NOT contain any `var ` declarations
+- `src/utils.ts` must NOT contain `module.exports` (use ES module `export` instead)
 
 ## Tips
 
-- Write the rules first, then ask Claude to fix the code — Claude reads
-  CLAUDE.md at the start of a session, so your rules inform its work
+- Write the rules first, then ask Claude to fix the code — Claude re-reads
+  CLAUDE.md during a session, so your rules take effect immediately
 - Be specific in your rules — "use const by default" is better than
   "use modern syntax"
 

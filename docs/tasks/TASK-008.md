@@ -2,7 +2,7 @@
 
 **Priority:** P1
 **Estimated Effort:** 2h
-**Status:** TODO
+**Status:** DONE
 **Dependencies:** TASK-001
 **Blocked By:** TASK-001
 
@@ -29,14 +29,14 @@ Create the fifth exercise teaching users to direct Claude for coordinated multi-
 
 ### Acceptance Criteria
 
-- [ ] AC-1: `setup.sh` creates 5+ files all referencing `getUserData`: service definition, route handlers, middleware, test file
-- [ ] AC-2: `getUserData()` is defined in `src/services/user-service.ts` and imported/called in 4 other files
-- [ ] AC-3: `validate.sh` checks: (a) no file in `src/` contains `getUserData`, (b) `fetchUserProfile` exists in all 5 files
-- [ ] AC-4: `validate.sh` uses `grep -r` to verify zero remaining references to old name
-- [ ] AC-5: `instructions.md` is clear about the rename scope (definition + all imports + all call sites)
-- [ ] AC-6: Scaffold code is syntactically correct TypeScript with realistic import/export patterns
-- [ ] AC-7: `validate.sh` reports which specific files still contain the old name on failure
-- [ ] AC-8: `setup.sh` is idempotent
+- [x] AC-1: `setup.sh` creates 5+ files all referencing `getUserData`: service definition, route handlers, middleware, test file
+- [x] AC-2: `getUserData()` is defined in `src/services/user-service.ts` and imported/called in 4 other files
+- [x] AC-3: `validate.sh` checks: (a) no file in `src/` contains `getUserData`, (b) `fetchUserProfile` exists in all 5 files
+- [x] AC-4: `validate.sh` uses `grep -r` to verify zero remaining references to old name
+- [x] AC-5: `instructions.md` is clear about the rename scope (definition + all imports + all call sites)
+- [x] AC-6: Scaffold code is syntactically correct TypeScript with realistic import/export patterns
+- [x] AC-7: `validate.sh` reports which specific files still contain the old name on failure
+- [x] AC-8: `setup.sh` is idempotent
 
 ### Technical Notes
 

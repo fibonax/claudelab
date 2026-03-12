@@ -2,7 +2,7 @@
 
 **Priority:** P1
 **Estimated Effort:** 2h
-**Status:** TODO
+**Status:** DONE
 **Dependencies:** TASK-001
 **Blocked By:** TASK-001
 
@@ -29,14 +29,14 @@ Create the fourth exercise teaching users how to use Claude to explore and under
 
 ### Acceptance Criteria
 
-- [ ] AC-1: `setup.sh` creates a realistic multi-file project: `src/index.ts`, `src/routes/users.ts`, `src/routes/posts.ts`, `src/models/user.ts`, `src/models/post.ts`, `src/utils/validate.ts`, `CLAUDE.md`
-- [ ] AC-2: `src/models/user.ts` contains the deliberate `emial` typo (obvious bug)
-- [ ] AC-3: All scaffold files are realistic TypeScript code (not empty stubs)
-- [ ] AC-4: `validate.sh` checks: (a) answers.md exists, (b) mentions routes, (c) mentions user and post models, (d) mentions the emial/email bug, (e) ≥5 lines
-- [ ] AC-5: `instructions.md` frames the task as "understand before changing" — explicitly asks 3 questions
-- [ ] AC-6: The bug is obvious enough for a beginner but requires actual exploration to find
-- [ ] AC-7: `validate.sh` provides specific feedback on which answer is missing
-- [ ] AC-8: `setup.sh` is idempotent
+- [x] AC-1: `setup.sh` creates a realistic multi-file project: `src/index.ts`, `src/routes/users.ts`, `src/routes/posts.ts`, `src/models/user.ts`, `src/models/post.ts`, `src/utils/validate.ts`, `CLAUDE.md`
+- [x] AC-2: `src/models/user.ts` contains the deliberate `emial` typo (obvious bug)
+- [x] AC-3: All scaffold files are realistic TypeScript code (not empty stubs)
+- [x] AC-4: `validate.sh` checks: (a) answers.md exists, (b) mentions routes, (c) mentions user and post models, (d) mentions the emial/email bug, (e) ≥5 lines
+- [x] AC-5: `instructions.md` frames the task as "understand before changing" — explicitly asks 3 questions
+- [x] AC-6: The bug is obvious enough for a beginner but requires actual exploration to find
+- [x] AC-7: `validate.sh` provides specific feedback on which answer is missing
+- [x] AC-8: `setup.sh` is idempotent
 
 ### Technical Notes
 

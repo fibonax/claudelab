@@ -2,7 +2,7 @@
 
 **Priority:** P1
 **Estimated Effort:** 1.5h
-**Status:** TODO
+**Status:** DONE
 **Dependencies:** TASK-001
 **Blocked By:** TASK-001
 
@@ -29,14 +29,14 @@ Create the third exercise teaching users how to add code style directives to CLA
 
 ### Acceptance Criteria
 
-- [ ] AC-1: `setup.sh` creates `src/utils.ts` with CommonJS `require()` and `var` declarations
-- [ ] AC-2: `setup.sh` creates `package.json` with `"type": "module"`
-- [ ] AC-3: `setup.sh` creates a CLAUDE.md with project description but NO code style section
-- [ ] AC-4: `validate.sh` checks: (a) CLAUDE.md has Code Style/Conventions section, (b) mentions import/ES module, (c) mentions const/var rule, (d) utils.ts has NO `require(`, (e) utils.ts has NO `var `
-- [ ] AC-5: Scaffold code is realistic — `utils.ts` should have 3-5 functions using the wrong patterns
-- [ ] AC-6: `validate.sh` provides clear failure messages distinguishing "CLAUDE.md not updated" vs "code not fixed"
-- [ ] AC-7: Hints guide user through both parts: update CLAUDE.md, then fix code
-- [ ] AC-8: `setup.sh` is idempotent
+- [x] AC-1: `setup.sh` creates `src/utils.ts` with CommonJS `require()` and `var` declarations
+- [x] AC-2: `setup.sh` creates `package.json` with `"type": "module"`
+- [x] AC-3: `setup.sh` creates a CLAUDE.md with project description but NO code style section
+- [x] AC-4: `validate.sh` checks: (a) CLAUDE.md has Code Style/Conventions section, (b) mentions import/ES module, (c) mentions const/var rule, (d) utils.ts has NO `require(`, (e) utils.ts has NO `var `
+- [x] AC-5: Scaffold code is realistic — `utils.ts` should have 3-5 functions using the wrong patterns
+- [x] AC-6: `validate.sh` provides clear failure messages distinguishing "CLAUDE.md not updated" vs "code not fixed"
+- [x] AC-7: Hints guide user through both parts: update CLAUDE.md, then fix code
+- [x] AC-8: `setup.sh` is idempotent
 
 ### Technical Notes
 

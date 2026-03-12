@@ -1,0 +1,10 @@
+{
+  "id": "cc-004",
+  "title": "Code Detective",
+  "track": "fundamentals",
+  "difficulty": "beginner",
+  "order": 4,
+  "prerequisites": ["cc-002"],
+  "estimatedMinutes": 10,
+  "concept": "File reading and navigating context"
+}

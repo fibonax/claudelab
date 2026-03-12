@@ -2,7 +2,7 @@
 
 **Priority:** P0
 **Estimated Effort:** 1.5h
-**Status:** TODO
+**Status:** DONE
 **Dependencies:** TASK-001
 **Blocked By:** TASK-001
 
@@ -30,14 +30,14 @@ Create the second exercise teaching users to create a CLAUDE.md file with essent
 
 ### Acceptance Criteria
 
-- [ ] AC-1: `setup.sh` creates workspace with `src/index.ts`, `package.json`, `tsconfig.json` — realistic scaffold files
-- [ ] AC-2: Scaffold files are realistic (valid TypeScript, valid package.json, valid tsconfig)
-- [ ] AC-3: `validate.sh` checks: (a) CLAUDE.md exists, (b) has a project/description heading, (c) has a commands section, (d) mentions a technology, (e) 10-100 lines
-- [ ] AC-4: `instructions.md` explains the "briefing document" metaphor for CLAUDE.md
-- [ ] AC-5: `instructions.md` lists required sections clearly (project description, tech stack, commands)
-- [ ] AC-6: Hints progress from gentle to near-answer per curriculum spec
-- [ ] AC-7: `validate.sh` provides specific feedback on which check failed
-- [ ] AC-8: `setup.sh` is idempotent (safe to re-run via `/cclab:reset`)
+- [x] AC-1: `setup.sh` creates workspace with `src/index.ts`, `package.json`, `tsconfig.json` — realistic scaffold files
+- [x] AC-2: Scaffold files are realistic (valid TypeScript, valid package.json, valid tsconfig)
+- [x] AC-3: `validate.sh` checks: (a) CLAUDE.md exists, (b) has a project/description heading, (c) has a commands section, (d) mentions a technology, (e) 10-100 lines
+- [x] AC-4: `instructions.md` explains the "briefing document" metaphor for CLAUDE.md
+- [x] AC-5: `instructions.md` lists required sections clearly (project description, tech stack, commands)
+- [x] AC-6: Hints progress from gentle to near-answer per curriculum spec
+- [x] AC-7: `validate.sh` provides specific feedback on which check failed
+- [x] AC-8: `setup.sh` is idempotent (safe to re-run via `/cclab:reset`)
 
 ### Technical Notes
 

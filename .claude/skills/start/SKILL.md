@@ -15,15 +15,9 @@ Store this path as `PLUGIN_ROOT` for all subsequent steps.
 
 ## Process
 
-### Step 1: Initialize cclab environment
+### Step 1: Greet the user
 
-Using the Bash tool, create the runtime directories if they don't exist:
-
-```bash
-mkdir -p ~/.cclab/workspace
-```
-
-### Step 2: Greet the user
+**IMPORTANT: Output the greeting as plain text BEFORE making any tool calls.** This ensures the user sees the greeting immediately, not after tool operations.
 
 Display a fun, short greeting message to the user. Pick one from this pool or generate a similar one in the same warm, encouraging tone — vary it each time so it feels fresh:
 
@@ -38,7 +32,23 @@ Display a fun, short greeting message to the user. Pick one from this pool or ge
 - "Another day, another skill to master. Let's go!"
 - "You're back! Time to unlock some Claude Code superpowers."
 
-Keep it to one or two sentences. Display the greeting, then proceed to load progress.
+Keep it to one or two sentences. Display the greeting, then proceed to the next step.
+
+Then, check if `~/.claude/settings.json` exists and contains any cclab permission rule (an entry matching `~/.cclab/*` in `permissions.allow`). If cclab permissions are **not** configured, append this tip below the greeting:
+
+```
+Tip: Run /cclab:setup for a smoother learning experience (fewer permission prompts).
+```
+
+If permissions are already configured, skip this tip.
+
+### Step 2: Initialize cclab environment
+
+Using the Bash tool, create the runtime directories if they don't exist:
+
+```bash
+mkdir -p ~/.cclab/workspace
+```
 
 ### Step 3: Load or create progress state
 

@@ -24,9 +24,9 @@ cclab/
 ├── .claude/
 │   ├── settings.json                   # Project permissions & hooks
 │   │
-│   ├── skills/                         # All skills (11 total)
+│   ├── skills/                         # All skills (12 total)
 │   │   │
-│   │   │ ## Learner-facing skills (5) — delivered via plugin
+│   │   │ ## Learner-facing skills (6) — delivered via plugin
 │   │   ├── start/                      # /cclab:start — begin or resume
 │   │   │   └── SKILL.md
 │   │   ├── check/                      # /cclab:check — validate exercise
@@ -36,6 +36,8 @@ cclab/
 │   │   ├── status/                     # /cclab:status — progress dashboard
 │   │   │   └── SKILL.md
 │   │   ├── reset/                      # /cclab:reset — restart exercise
+│   │   │   └── SKILL.md
+│   │   ├── setup/                      # /cclab:setup — configure permissions
 │   │   │   └── SKILL.md
 │   │   │
 │   │   │ ## Dev-only skills (6) — for building exercises

@@ -25,6 +25,7 @@ Use these slash commands inside Claude Code:
 | `/hint` | Get a progressive hint (up to 3 levels) |
 | `/status` | View your progress dashboard |
 | `/reset` | Restart the current exercise from scratch |
+| `/setup` | Configure permissions for fewer prompts |
 
 ## Exercises
 

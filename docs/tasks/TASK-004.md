@@ -2,7 +2,7 @@
 
 **Priority:** P0
 **Estimated Effort:** 1h
-**Status:** TODO
+**Status:** DONE
 **Dependencies:** TASK-001
 **Blocked By:** TASK-001
 
@@ -30,14 +30,14 @@ Create the first exercise in the Fundamentals track. This is the gateway exercis
 
 ### Acceptance Criteria
 
-- [ ] AC-1: `metadata.json` contains correct ID (`cc-001`), track (`fundamentals`), difficulty (`beginner`), order (`1`), empty prerequisites
-- [ ] AC-2: `instructions.md` clearly explains the task in beginner-friendly language
-- [ ] AC-3: `setup.sh` is executable, creates `~/.cclab/workspace/cc-001/` idempotently (`mkdir -p`)
-- [ ] AC-4: `validate.sh` checks: (a) `hello.md` exists, (b) file has ≥3 lines, (c) file contains "Claude" (case-insensitive)
-- [ ] AC-5: `validate.sh` provides clear feedback messages on each failure
-- [ ] AC-6: `hints.md` has 3 levels separated by `## Hint 1/2/3` markers
-- [ ] AC-7: Hint progression goes from gentle nudge → specific guidance → near-answer
-- [ ] AC-8: `validate.sh` exits 0 on pass, non-zero on fail
+- [x] AC-1: `metadata.json` contains correct ID (`cc-001`), track (`fundamentals`), difficulty (`beginner`), order (`1`), empty prerequisites
+- [x] AC-2: `instructions.md` clearly explains the task in beginner-friendly language
+- [x] AC-3: `setup.sh` is executable, creates `~/.cclab/workspace/cc-001/` idempotently (`mkdir -p`)
+- [x] AC-4: `validate.sh` checks: (a) `hello.md` exists, (b) file has ≥3 lines, (c) file contains "Claude" (case-insensitive)
+- [x] AC-5: `validate.sh` provides clear feedback messages on each failure
+- [x] AC-6: `hints.md` has 3 levels separated by `## Hint 1/2/3` markers
+- [x] AC-7: Hint progression goes from gentle nudge → specific guidance → near-answer
+- [x] AC-8: `validate.sh` exits 0 on pass, non-zero on fail
 
 ### Technical Notes
 

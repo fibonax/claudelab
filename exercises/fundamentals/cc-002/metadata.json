@@ -1,0 +1,10 @@
+{
+  "id": "cc-002",
+  "title": "Your First CLAUDE.md",
+  "track": "fundamentals",
+  "difficulty": "beginner",
+  "order": 2,
+  "prerequisites": ["cc-001"],
+  "estimatedMinutes": 10,
+  "concept": "Creating a CLAUDE.md file (project context)"
+}

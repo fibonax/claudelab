@@ -1,0 +1,10 @@
+{
+  "id": "cc-001",
+  "title": "Hello Claude Code",
+  "track": "fundamentals",
+  "difficulty": "beginner",
+  "order": 1,
+  "prerequisites": [],
+  "estimatedMinutes": 5,
+  "concept": "First prompt, verify setup works"
+}

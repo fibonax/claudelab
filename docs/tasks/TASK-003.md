@@ -2,7 +2,7 @@
 
 **Priority:** P1
 **Estimated Effort:** 1h
-**Status:** TODO
+**Status:** DONE
 **Dependencies:** TASK-002
 **Blocked By:** TASK-002
 
@@ -28,14 +28,14 @@ Create the two supporting learner-facing skills: `/cclab:status` (progress dashb
 
 ### Acceptance Criteria
 
-- [ ] AC-1: `/cclab:status` shows track name ("Fundamentals") and description
-- [ ] AC-2: `/cclab:status` lists all exercises with completion status (checkmark / current arrow / pending)
-- [ ] AC-3: `/cclab:status` shows completion percentage (e.g., "3/8 exercises complete — 37%")
-- [ ] AC-4: `/cclab:status` handles first-run case (no progress.json yet)
-- [ ] AC-5: `/cclab:reset` re-runs the current exercise's setup.sh to restore scaffold
-- [ ] AC-6: `/cclab:reset` clears the hint counter for that exercise in progress.json
-- [ ] AC-7: `/cclab:reset` does NOT affect other exercises' completion status
-- [ ] AC-8: `/cclab:reset` confirms the reset action before executing
+- [x] AC-1: `/cclab:status` shows track name ("Fundamentals") and description
+- [x] AC-2: `/cclab:status` lists all exercises with completion status (checkmark / current arrow / pending)
+- [x] AC-3: `/cclab:status` shows completion percentage (e.g., "3/8 exercises complete — 37%")
+- [x] AC-4: `/cclab:status` handles first-run case (no progress.json yet)
+- [x] AC-5: `/cclab:reset` re-runs the current exercise's setup.sh to restore scaffold
+- [x] AC-6: `/cclab:reset` clears the hint counter for that exercise in progress.json
+- [x] AC-7: `/cclab:reset` does NOT affect other exercises' completion status
+- [x] AC-8: `/cclab:reset` confirms the reset action before executing
 
 ### Technical Notes
 

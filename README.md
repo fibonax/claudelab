@@ -77,6 +77,9 @@ claude
 /start
 ```
 
+> **Note:** Your exercise files are created in `~/.cclab/workspace/`, not in the
+> cloned repository. The plugin source directory stays clean.
+
 ## Development
 
 See [CLAUDE.md](./CLAUDE.md) for project conventions and the development pipeline.

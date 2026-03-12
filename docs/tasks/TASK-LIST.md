@@ -1,7 +1,7 @@
 # Task List: cclab MVP1 — Fundamentals Track
 
-**Total Tasks:** 11
-**Estimated Total Effort:** 16h
+**Total Tasks:** 13
+**Estimated Total Effort:** 16.75h
 **Date Created:** 2026-03-09
 **Status:** PLANNING
 
@@ -24,6 +24,10 @@ TASK-001 (Plugin Manifest & Framework)
 ├──▶ TASK-009 (cc-006: Git Like a Pro)
 ├──▶ TASK-010 (cc-007: Command Center)
 └──▶ TASK-011 (cc-008: Prompt Architect)
+
+TASK-002 ──▶ TASK-012 (Fun Greeting in /start)
+
+TASK-013 (Clarify Offline Install — no dependencies)
 ```
 
 **Critical path:** TASK-001 → TASK-002 → TASK-003 (skills must exist before end-to-end testing)
@@ -45,6 +49,8 @@ All exercise tasks (TASK-004 through TASK-011) depend only on TASK-001 for direc
 | TASK-009 | Exercise cc-006 — Git Like a Pro | P1 | 2h | DONE | TASK-001 | — |
 | TASK-010 | Exercise cc-007 — Command Center | P1 | 1h | DONE | TASK-001 | — |
 | TASK-011 | Exercise cc-008 — Prompt Architect | P1 | 2h | DONE | TASK-001 | — |
+| TASK-012 | Fun Greeting Message in /start Skill | P2 | 0.5h | DONE | TASK-002 | — |
+| TASK-013 | Clarify Offline Install — Workspace Location | P2 | 0.25h | DONE | None | — |
 
 ### Implementation Order
 
@@ -66,6 +72,10 @@ All exercise tasks (TASK-004 through TASK-011) depend only on TASK-001 for direc
 - **TASK-008:** Exercise cc-005 — The Great Refactor
 - **TASK-009:** Exercise cc-006 — Git Like a Pro
 - **TASK-011:** Exercise cc-008 — Prompt Architect (capstone)
+
+#### Wave 5 — Polish & Documentation
+- **TASK-012:** Fun Greeting Message in /start Skill
+- **TASK-013:** Clarify Offline Install — Workspace Location
 
 ### Recommended Sequential Order
 

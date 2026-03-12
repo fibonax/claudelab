@@ -23,7 +23,24 @@ Using the Bash tool, create the runtime directories if they don't exist:
 mkdir -p ~/.cclab/workspace
 ```
 
-### Step 2: Load or create progress state
+### Step 2: Greet the user
+
+Display a fun, short greeting message to the user. Pick one from this pool or generate a similar one in the same warm, encouraging tone — vary it each time so it feels fresh:
+
+- "Hello cclab! It's great to be learning."
+- "Welcome back! Let's sharpen those Claude Code skills."
+- "Hey there! Ready to level up?"
+- "Good to see you! Let's dive into some hands-on learning."
+- "cclab time! Let's make some magic happen."
+- "Let's learn something new today — you've got this!"
+- "Welcome to cclab! Your next challenge awaits."
+- "Hey! Grab your keyboard — it's learning time."
+- "Another day, another skill to master. Let's go!"
+- "You're back! Time to unlock some Claude Code superpowers."
+
+Keep it to one or two sentences. Display the greeting, then proceed to load progress.
+
+### Step 3: Load or create progress state
 
 Read `~/.cclab/progress.json` using the Read tool.
 
@@ -51,7 +68,7 @@ Read `~/.cclab/progress.json` using the Read tool.
 2. If the JSON is corrupted (cannot parse), back it up to `~/.cclab/progress.json.bak`, create a fresh one as above, and warn the user: "Progress file was corrupted. A backup was saved and progress has been reset."
 3. Use the `current_exercise` field to determine which exercise to load
 
-### Step 3: Check for completion
+### Step 4: Check for completion
 
 Discover all exercise IDs from `$PLUGIN_ROOT/exercises/fundamentals/cc-*/metadata.json`.
 
@@ -65,11 +82,11 @@ Stay tuned for future updates!
 
 Stop here — do not proceed further.
 
-### Step 4: Validate current exercise exists
+### Step 5: Validate current exercise exists
 
 If `current_exercise` references an exercise that doesn't exist on disk (no matching directory under `exercises/fundamentals/`), reset to the first available uncompleted exercise and warn: "Exercise <id> was not found. Resuming from <new-id>."
 
-### Step 5: Run exercise setup
+### Step 6: Run exercise setup
 
 Check if `$PLUGIN_ROOT/exercises/fundamentals/<current_exercise>/setup.sh` exists.
 
@@ -83,7 +100,7 @@ The setup script is idempotent — safe to run multiple times. It creates the wo
 
 If setup.sh does not exist, skip this step silently.
 
-### Step 6: Present the exercise
+### Step 7: Present the exercise
 
 1. Read `$PLUGIN_ROOT/exercises/fundamentals/<current_exercise>/metadata.json` — extract `title`, `difficulty`, `estimatedMinutes`
 2. Read `$PLUGIN_ROOT/exercises/fundamentals/<current_exercise>/instructions.md`
@@ -104,6 +121,6 @@ If setup.sh does not exist, skip this step silently.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-### Step 7: Update timestamp
+### Step 8: Update timestamp
 
 Update `updated_at` in `~/.cclab/progress.json` to the current ISO timestamp and write it back.

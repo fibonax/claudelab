@@ -45,12 +45,35 @@ More tracks planned: **Skills**, **Workflows**, **Advanced**.
 
 ## Getting Started
 
-```bash
-# 1. Install the plugin
-claude /install-plugin https://github.com/3t-dev/claudelab
+### Package Install
 
-# 2. Launch Claude Code and start learning
+```bash
+# 1. Launch Claude Code
 claude
+
+# 2. Add the plugin marketplace
+/plugin marketplace add 3t-dev/claudelab
+
+# 3. Install the plugin
+/plugin install cclab@3t-dev-claudelab
+
+# 4. Start learning
+/start
+```
+
+### Offline Install
+
+If you prefer to install from a local clone:
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/3t-dev/claudelab.git
+
+# 2. Launch Claude Code from the cloned directory
+cd claudelab
+claude
+
+# 3. Start learning — the plugin loads automatically from the local project
 /start
 ```
 

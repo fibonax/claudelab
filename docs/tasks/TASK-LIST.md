@@ -35,7 +35,7 @@ All exercise tasks (TASK-004 through TASK-011) depend only on TASK-001 for direc
 | ID | Title | Priority | Effort | Status | Dependencies | Assignee |
 |---|---|---|---|---|---|---|
 | TASK-001 | Plugin Manifest & Exercise Framework | P0 | 1h | DONE | None | — |
-| TASK-002 | Core Skills — start, check, hint | P0 | 2h | TODO | TASK-001 | — |
+| TASK-002 | Core Skills — start, check, hint | P0 | 2h | DONE | TASK-001 | — |
 | TASK-003 | Supporting Skills — status, reset | P1 | 1h | TODO | TASK-002 | — |
 | TASK-004 | Exercise cc-001 — Hello Claude Code | P0 | 1h | TODO | TASK-001 | — |
 | TASK-005 | Exercise cc-002 — Your First CLAUDE.md | P0 | 1.5h | TODO | TASK-001 | — |

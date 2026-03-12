@@ -2,7 +2,7 @@
 
 **Priority:** P0
 **Estimated Effort:** 2h
-**Status:** TODO
+**Status:** DONE
 **Dependencies:** TASK-001
 **Blocked By:** TASK-001
 
@@ -29,17 +29,17 @@ Create the three core learner-facing skills that form the exercise loop: `/cclab
 
 ### Acceptance Criteria
 
-- [ ] AC-1: `/cclab:start` creates `~/.cclab/` and `~/.cclab/workspace/` on first run
-- [ ] AC-2: `/cclab:start` creates `progress.json` with correct initial state on first run
-- [ ] AC-3: `/cclab:start` detects existing progress and resumes at current exercise
-- [ ] AC-4: `/cclab:start` runs the current exercise's `setup.sh` to scaffold workspace
-- [ ] AC-5: `/cclab:start` displays the current exercise's `instructions.md` content
-- [ ] AC-6: `/cclab:check` executes the current exercise's `validate.sh` and reports PASS/FAIL
-- [ ] AC-7: `/cclab:check` updates `progress.json` on PASS (marks exercise complete, advances to next)
-- [ ] AC-8: `/cclab:check` shows failure feedback from validate.sh stdout on FAIL
-- [ ] AC-9: `/cclab:hint` shows hint level 1 on first call, level 2 on second, level 3 on third
-- [ ] AC-10: `/cclab:hint` tracks hint level per exercise in progress.json
-- [ ] AC-11: All three skills handle edge cases (no exercises left, invalid state, missing files)
+- [x] AC-1: `/cclab:start` creates `~/.cclab/` and `~/.cclab/workspace/` on first run
+- [x] AC-2: `/cclab:start` creates `progress.json` with correct initial state on first run
+- [x] AC-3: `/cclab:start` detects existing progress and resumes at current exercise
+- [x] AC-4: `/cclab:start` runs the current exercise's `setup.sh` to scaffold workspace
+- [x] AC-5: `/cclab:start` displays the current exercise's `instructions.md` content
+- [x] AC-6: `/cclab:check` executes the current exercise's `validate.sh` and reports PASS/FAIL
+- [x] AC-7: `/cclab:check` updates `progress.json` on PASS (marks exercise complete, advances to next)
+- [x] AC-8: `/cclab:check` shows failure feedback from validate.sh stdout on FAIL
+- [x] AC-9: `/cclab:hint` shows hint level 1 on first call, level 2 on second, level 3 on third
+- [x] AC-10: `/cclab:hint` tracks hint level per exercise in progress.json
+- [x] AC-11: All three skills handle edge cases (no exercises left, invalid state, missing files)
 
 ### Technical Notes
 

@@ -1,0 +1,10 @@
+{
+  "id": "cc-003",
+  "title": "Convention Enforcer",
+  "track": "fundamentals",
+  "difficulty": "beginner",
+  "order": 3,
+  "prerequisites": ["cc-002"],
+  "estimatedMinutes": 10,
+  "concept": "CLAUDE.md code style directives"
+}

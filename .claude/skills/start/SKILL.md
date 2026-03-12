@@ -22,16 +22,15 @@ Store this path as `PLUGIN_ROOT` for all subsequent steps.
 First, display the cclab introduction panel. Output this ASCII art banner exactly as shown (preserve all spacing):
 
 ```
-          _       _
-  ___ ___| | __ _| |__
- / __/ __| |/ _` | '_ \        learn claude code — by doing
-| (_| (__| | (_| | |_) |       v0.1.0 · fundamentals · 8 exercises
- \___\___|_|\__,_|_.__/         thanhtt@fibonax.dev
+  _____ _____ _               ____  
+ / ____/ ____| |        /\   |  _ \ 
+| |   | |    | |       /  \  | |_) |
+| |   | |    | |      / /\ \ |  _ <      cclab: learn Claude Code by using Claude Code
+| |___| |____| |____ / ____ \| |_) |     v0.1.0 · fundamentals · 8 exercises  
+ \_____\_____|______/_/    \_\____/      thanhtt@fibonax.dev
 ```
 
-**Dynamic values in the panel:**
-- `fundamentals` — current track name (hardcoded for now)
-- `8 exercises` — replace `8` with the actual count of discovered exercises (from `$PLUGIN_ROOT/exercises/fundamentals/cc-*/metadata.json`)
+**All values in the panel are hardcoded — no tool calls needed to render it.**
 
 Then, immediately below the panel, display a fun, short greeting message. Pick one from this pool or generate a similar one in the same warm, encouraging tone — vary it each time so it feels fresh:
 
@@ -48,13 +47,15 @@ Then, immediately below the panel, display a fun, short greeting message. Pick o
 
 Keep it to one or two sentences.
 
-Then, check if `~/.claude/settings.json` exists and contains any cclab permission rule (an entry matching `~/.cclab/*` in `permissions.allow`). If cclab permissions are **not** configured, append this tip below the greeting:
+### Step 1.5: Check permissions and show setup tip
+
+Check if `~/.claude/settings.json` exists and contains any cclab permission rule (an entry matching `~/.cclab/*` in `permissions.allow`). If cclab permissions are **not** configured, display this tip:
 
 ```
 Tip: Run /cclab:setup for a smoother learning experience (fewer permission prompts).
 ```
 
-If permissions are already configured, skip this tip.
+If permissions are already configured, skip this tip silently.
 
 ### Step 2: Initialize cclab environment
 

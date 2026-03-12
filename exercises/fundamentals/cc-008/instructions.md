@@ -62,6 +62,28 @@ Ask Claude to create a plan in `plan.md` (in the workspace root) with numbered
 steps for adding input validation. The plan should have at least 3 numbered
 steps (e.g., `1.`, `2.`, `3.` or `Step 1`, `Step 2`, `Step 3`).
 
+## Getting Started
+
+First, navigate to the exercise workspace:
+
+```bash
+cd ~/.cclab/workspace/cc-008/
+```
+
+Start by exploring the existing code. The key files to look at are:
+
+- **`CLAUDE.md`** — project conventions and code style rules
+- **`src/api/handlers.ts`** — the API handler that needs validation
+- **`src/api/types.ts`** — the type definitions used by the handlers
+
+Ask Claude to read through these files so you both understand the project
+before making changes.
+
+Then work through the three challenges by giving Claude well-structured
+prompts. Each challenge produces a different output file — let Claude create
+and write them for you. The goal is to practice *how you ask*, not to write
+the code yourself.
+
 ## Requirements
 
 - `exploration.md` exists, mentions API/handler/endpoint, at least 5 lines

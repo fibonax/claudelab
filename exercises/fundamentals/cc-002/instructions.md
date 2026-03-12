@@ -23,6 +23,30 @@ Your CLAUDE.md must include at least these sections:
 3. **Commands** — How do you build, test, and run the project? (Use a `##`
    heading containing "Commands" or "Development")
 
+## Getting Started
+
+First, navigate to the exercise workspace:
+
+```bash
+cd ~/.cclab/workspace/cc-002/
+```
+
+Take a look at the project files (`package.json`, `tsconfig.json`, `src/index.ts`)
+to understand what this project does.
+
+Then create your `CLAUDE.md` file. You can do this in several ways:
+
+- **Inside Claude Code** — just ask Claude to create the file, or use the
+  Write tool directly
+- **Open in VS Code** — run `code ~/.cclab/workspace/cc-002/` in your terminal,
+  then create a new file named `CLAUDE.md` in the project root
+- **From the terminal** — use any editor you like:
+  ```bash
+  nano ~/.cclab/workspace/cc-002/CLAUDE.md
+  # or
+  vim ~/.cclab/workspace/cc-002/CLAUDE.md
+  ```
+
 ## Requirements
 
 - The file must be called `CLAUDE.md` (in the workspace root, not in a subfolder)

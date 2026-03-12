@@ -33,6 +33,37 @@ After updating CLAUDE.md, ask Claude to fix `src/utils.ts` to follow your
 new conventions. All `require()` calls should become `import` statements,
 and all `var` declarations should become `const` or `let`.
 
+## Getting Started
+
+First, navigate to the exercise workspace:
+
+```bash
+cd ~/.cclab/workspace/cc-003/
+```
+
+Take a look at the existing files to understand the starting point:
+
+- **`CLAUDE.md`** — already has a project description, but no code style rules
+- **`src/utils.ts`** — the code that needs fixing (look at the patterns used)
+- **`package.json`** and **`tsconfig.json`** — project configuration
+
+Start by reading `src/utils.ts` to see what bad patterns are in use. Then
+open `CLAUDE.md` to see what's already there. You can do this in several ways:
+
+- **Inside Claude Code** — ask Claude to read the files for you, then ask it
+  to edit `CLAUDE.md` to add your code style rules
+- **Open in VS Code** — run `code ~/.cclab/workspace/cc-003/` in your terminal,
+  then edit `CLAUDE.md` directly
+- **From the terminal** — use any editor you like:
+  ```bash
+  nano ~/.cclab/workspace/cc-003/CLAUDE.md
+  # or
+  vim ~/.cclab/workspace/cc-003/CLAUDE.md
+  ```
+
+Once you've updated `CLAUDE.md` with your rules, move on to Part 2 and ask
+Claude to fix the code.
+
 ## Requirements
 
 - CLAUDE.md must have a section with "Code Style" or "Conventions" in the heading

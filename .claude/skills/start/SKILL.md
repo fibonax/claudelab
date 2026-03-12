@@ -15,11 +15,25 @@ Store this path as `PLUGIN_ROOT` for all subsequent steps.
 
 ## Process
 
-### Step 1: Greet the user
+### Step 1: Display introduction panel and greeting
 
-**IMPORTANT: Output the greeting as plain text BEFORE making any tool calls.** This ensures the user sees the greeting immediately, not after tool operations.
+**IMPORTANT: Output the entire panel and greeting as plain text in a SINGLE message BEFORE making any tool calls.** This ensures the user sees everything immediately, not after tool operations.
 
-Display a fun, short greeting message to the user. Pick one from this pool or generate a similar one in the same warm, encouraging tone — vary it each time so it feels fresh:
+First, display the cclab introduction panel. Output this ASCII art banner exactly as shown (preserve all spacing):
+
+```
+          _       _
+  ___ ___| | __ _| |__
+ / __/ __| |/ _` | '_ \        learn claude code — by doing
+| (_| (__| | (_| | |_) |       v0.1.0 · fundamentals · 8 exercises
+ \___\___|_|\__,_|_.__/         thanhtt@fibonax.dev
+```
+
+**Dynamic values in the panel:**
+- `fundamentals` — current track name (hardcoded for now)
+- `8 exercises` — replace `8` with the actual count of discovered exercises (from `$PLUGIN_ROOT/exercises/fundamentals/cc-*/metadata.json`)
+
+Then, immediately below the panel, display a fun, short greeting message. Pick one from this pool or generate a similar one in the same warm, encouraging tone — vary it each time so it feels fresh:
 
 - "Hello cclab! It's great to be learning."
 - "Welcome back! Let's sharpen those Claude Code skills."
@@ -32,7 +46,7 @@ Display a fun, short greeting message to the user. Pick one from this pool or ge
 - "Another day, another skill to master. Let's go!"
 - "You're back! Time to unlock some Claude Code superpowers."
 
-Keep it to one or two sentences. Display the greeting, then proceed to the next step.
+Keep it to one or two sentences.
 
 Then, check if `~/.claude/settings.json` exists and contains any cclab permission rule (an entry matching `~/.cclab/*` in `permissions.allow`). If cclab permissions are **not** configured, append this tip below the greeting:
 

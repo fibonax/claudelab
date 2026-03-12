@@ -15,6 +15,24 @@ That's it — just talk to Claude in plain English. For example, you could say:
 
 > "Create a file called hello.md with a greeting and a fun fact about Claude Code."
 
+## Getting Started
+
+First, navigate to the exercise workspace:
+
+```bash
+cd ~/.cclab/workspace/cc-001/
+```
+
+This workspace starts empty — your job is to ask Claude to create a file here.
+
+Just type a request in plain English in the Claude Code CLI. For example:
+
+> "Create a file called hello.md in this directory with a greeting and a fun
+> fact about Claude Code."
+
+Claude will use the Write tool to create the file for you. That's it — talking
+to Claude in natural language is the core skill this exercise teaches.
+
 ## Requirements
 
 Your `hello.md` file must:

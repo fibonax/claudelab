@@ -33,6 +33,36 @@ Make sure your list includes at least:
 
 You're free to include any other commands you find interesting or useful.
 
+## Getting Started
+
+First, navigate to the exercise workspace:
+
+```bash
+cd ~/.cclab/workspace/cc-007/
+```
+
+Take a look at the project files (`CLAUDE.md`, `src/index.ts`, `src/search.ts`)
+to get familiar with the workspace.
+
+**Discover commands** — in Claude Code, type `/` and see what appears, or type
+`/help` to get a full list. Read through what's available and pick the ones
+you find most useful.
+
+**Create your documentation** — once you've explored the commands, create a
+file called `commands.md` in the workspace root. You can do this in several
+ways:
+
+- **Inside Claude Code** — ask Claude to create the file, or use the
+  Write tool directly
+- **Open in VS Code** — run `code ~/.cclab/workspace/cc-007/` in your terminal,
+  then create a new file named `commands.md` in the project root
+- **From the terminal** — use any editor you like:
+  ```bash
+  nano ~/.cclab/workspace/cc-007/commands.md
+  # or
+  vim ~/.cclab/workspace/cc-007/commands.md
+  ```
+
 ## Requirements
 
 - File must be called `commands.md` (in the workspace root)

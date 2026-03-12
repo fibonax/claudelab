@@ -25,6 +25,38 @@ What data models does the project define?
 ### Question 3: Bugs
 Can you find any bugs or typos in the code?
 
+## Getting Started
+
+First, navigate to the exercise workspace:
+
+```bash
+cd ~/.cclab/workspace/cc-004/
+```
+
+This project has several files spread across multiple folders. Browse the
+structure to get a feel for the codebase:
+
+- **`src/routes/`** — route handler files
+- **`src/models/`** — data model definitions
+- **`src/utils/`** — utility modules
+- **`src/index.ts`** — application entry point
+- **`CLAUDE.md`**, **`package.json`**, **`tsconfig.json`** — project config
+
+The best approach here is to let Claude explore for you. Ask Claude to read
+through the project files and report what it finds. Then create `answers.md`
+with the findings. You can create the file in several ways:
+
+- **Inside Claude Code** — ask Claude to investigate the project and write
+  its findings directly into `answers.md`
+- **Open in VS Code** — run `code ~/.cclab/workspace/cc-004/` in your terminal,
+  then create a new file named `answers.md` in the project root
+- **From the terminal** — use any editor you like:
+  ```bash
+  nano ~/.cclab/workspace/cc-004/answers.md
+  # or
+  vim ~/.cclab/workspace/cc-004/answers.md
+  ```
+
 ## Requirements
 
 - Create a file called `answers.md` in the workspace root (not in a subfolder)

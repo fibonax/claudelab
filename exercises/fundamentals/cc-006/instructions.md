@@ -34,6 +34,35 @@ CLAUDE.md in the workspace — it describes the expected format.
 Make sure everything is clean: the branch is `feature/add-logging`, the commit is
 there, and the working tree has no uncommitted changes.
 
+## Getting Started
+
+First, navigate to the exercise workspace:
+
+```bash
+cd ~/.cclab/workspace/cc-006/
+```
+
+Before you start, orient yourself in the repository:
+
+1. **Read the CLAUDE.md** — it contains the commit conventions you'll need to
+   follow. You can open it in any editor, or ask Claude to read it for you.
+2. **Check the git status** — ask Claude to show you the current branch and
+   commit history so you know the starting state.
+3. **Look at the existing code** — browse `src/app.ts` to get a feel for the
+   project.
+
+You can explore these files in several ways:
+
+- **Inside Claude Code** — ask Claude to read the files or check git status
+- **Open in VS Code** — run `code ~/.cclab/workspace/cc-006/` in your terminal
+- **From the terminal** — use `cat`, `git log`, or any editor you like:
+  ```bash
+  cat ~/.cclab/workspace/cc-006/CLAUDE.md
+  ```
+
+Once you're oriented, work through the task steps one at a time. Ask Claude
+to help with each step — creating the branch, adding the file, and committing.
+
 ## Requirements
 
 - Current branch must be `feature/add-logging`

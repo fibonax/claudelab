@@ -25,6 +25,31 @@ Ask Claude to rename `getUserData` to `fetchUserProfile` across the entire
 codebase. When you're done, there should be **zero** references to the old
 name anywhere in `src/`.
 
+## Getting Started
+
+First, navigate to the exercise workspace:
+
+```bash
+cd ~/.cclab/workspace/cc-005/
+```
+
+Take a look at the project structure to understand how the codebase is
+organized. Browse the `src/` directory and its subdirectories to see which
+files exist and where `getUserData` is used:
+
+- **Inside Claude Code** — ask Claude to list the files in the project, or
+  to search for `getUserData` across the codebase
+- **Open in VS Code** — run `code ~/.cclab/workspace/cc-005/` in your
+  terminal, then explore the `src/` folder in the sidebar
+- **From the terminal** — use `ls` or `find` to browse:
+  ```bash
+  ls -R ~/.cclab/workspace/cc-005/src/
+  ```
+
+Once you know where `getUserData` appears, ask Claude to perform the rename.
+Let Claude figure out how to update every file — that's the skill this
+exercise teaches.
+
 ## Requirements
 
 - `getUserData` must not appear anywhere in `src/` (completely removed)

@@ -1,0 +1,10 @@
+{
+  "id": "cc-007",
+  "title": "Command Center",
+  "track": "fundamentals",
+  "difficulty": "beginner",
+  "order": 7,
+  "prerequisites": ["cc-001"],
+  "estimatedMinutes": 10,
+  "concept": "Built-in slash commands"
+}

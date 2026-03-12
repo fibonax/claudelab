@@ -1,0 +1,10 @@
+{
+  "id": "cc-006",
+  "title": "Git Like a Pro",
+  "track": "fundamentals",
+  "difficulty": "intermediate",
+  "order": 6,
+  "prerequisites": ["cc-004"],
+  "estimatedMinutes": 15,
+  "concept": "Git integration — branches and commits"
+}

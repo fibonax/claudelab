@@ -42,9 +42,9 @@ All exercise tasks (TASK-004 through TASK-011) depend only on TASK-001 for direc
 | TASK-006 | Exercise cc-003 — Convention Enforcer | P1 | 1.5h | DONE | TASK-001 | — |
 | TASK-007 | Exercise cc-004 — Code Detective | P1 | 2h | DONE | TASK-001 | — |
 | TASK-008 | Exercise cc-005 — The Great Refactor | P1 | 2h | DONE | TASK-001 | — |
-| TASK-009 | Exercise cc-006 — Git Like a Pro | P1 | 2h | TODO | TASK-001 | — |
-| TASK-010 | Exercise cc-007 — Command Center | P1 | 1h | TODO | TASK-001 | — |
-| TASK-011 | Exercise cc-008 — Prompt Architect | P1 | 2h | TODO | TASK-001 | — |
+| TASK-009 | Exercise cc-006 — Git Like a Pro | P1 | 2h | DONE | TASK-001 | — |
+| TASK-010 | Exercise cc-007 — Command Center | P1 | 1h | DONE | TASK-001 | — |
+| TASK-011 | Exercise cc-008 — Prompt Architect | P1 | 2h | DONE | TASK-001 | — |
 
 ### Implementation Order
 

@@ -2,7 +2,7 @@
 
 **Priority:** P1
 **Estimated Effort:** 1h
-**Status:** TODO
+**Status:** DONE
 **Dependencies:** TASK-001
 **Blocked By:** TASK-001
 
@@ -29,12 +29,12 @@ Create the seventh exercise teaching users about Claude Code's built-in slash co
 
 ### Acceptance Criteria
 
-- [ ] AC-1: `setup.sh` creates workspace with a few source files and a basic CLAUDE.md
-- [ ] AC-2: `validate.sh` checks: (a) `commands.md` exists, (b) has ≥5 lines starting with `/`, (c) mentions `/help`, (d) mentions `/compact` or `/clear`, (e) ≥8 total lines
-- [ ] AC-3: `instructions.md` explains the discovery task: use /help, explore commands, document findings
-- [ ] AC-4: Hints guide user from "try /help" to specific command list
-- [ ] AC-5: `validate.sh` provides specific feedback on what's missing
-- [ ] AC-6: `setup.sh` is idempotent
+- [x] AC-1: `setup.sh` creates workspace with a few source files and a basic CLAUDE.md
+- [x] AC-2: `validate.sh` checks: (a) `commands.md` exists, (b) has ≥5 lines starting with `/`, (c) mentions `/help`, (d) mentions `/compact` or `/clear`, (e) ≥8 total lines
+- [x] AC-3: `instructions.md` explains the discovery task: use /help, explore commands, document findings
+- [x] AC-4: Hints guide user from "try /help" to specific command list
+- [x] AC-5: `validate.sh` provides specific feedback on what's missing
+- [x] AC-6: `setup.sh` is idempotent
 
 ### Technical Notes
 

@@ -2,7 +2,7 @@
 
 **Priority:** P1
 **Estimated Effort:** 2h
-**Status:** TODO
+**Status:** DONE
 **Dependencies:** TASK-001
 **Blocked By:** TASK-001
 
@@ -29,14 +29,14 @@ Create the sixth exercise teaching users to use Claude's git integration for bra
 
 ### Acceptance Criteria
 
-- [ ] AC-1: `setup.sh` creates workspace, initializes git repo, creates initial files, makes first commit on `main`
-- [ ] AC-2: `setup.sh` creates `src/app.ts` and a `CLAUDE.md` with a Git section specifying conventional commits
-- [ ] AC-3: Initial commit message is `chore: initial project setup` (demonstrates the format)
-- [ ] AC-4: After setup, repo has clean working tree on `main` branch
-- [ ] AC-5: `validate.sh` checks: (a) `feature/add-logging` branch exists, (b) latest commit contains `feat`, (c) `src/logger.ts` exists and is non-empty, (d) working tree is clean, (e) current branch is `feature/add-logging`
-- [ ] AC-6: `instructions.md` walks through git workflow step-by-step (branch → code → commit)
-- [ ] AC-7: `validate.sh` provides specific feedback (e.g., "Branch not found" vs "Commit message doesn't follow conventional format")
-- [ ] AC-8: `setup.sh` is idempotent — re-running resets the repo cleanly
+- [x] AC-1: `setup.sh` creates workspace, initializes git repo, creates initial files, makes first commit on `main`
+- [x] AC-2: `setup.sh` creates `src/app.ts` and a `CLAUDE.md` with a Git section specifying conventional commits
+- [x] AC-3: Initial commit message is `chore: initial project setup` (demonstrates the format)
+- [x] AC-4: After setup, repo has clean working tree on `main` branch
+- [x] AC-5: `validate.sh` checks: (a) `feature/add-logging` branch exists, (b) latest commit contains `feat`, (c) `src/logger.ts` exists and is non-empty, (d) working tree is clean, (e) current branch is `feature/add-logging`
+- [x] AC-6: `instructions.md` walks through git workflow step-by-step (branch → code → commit)
+- [x] AC-7: `validate.sh` provides specific feedback (e.g., "Branch not found" vs "Commit message doesn't follow conventional format")
+- [x] AC-8: `setup.sh` is idempotent — re-running resets the repo cleanly
 
 ### Technical Notes
 

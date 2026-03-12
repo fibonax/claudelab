@@ -1,0 +1,10 @@
+{
+  "id": "cc-008",
+  "title": "Prompt Architect",
+  "track": "fundamentals",
+  "difficulty": "intermediate",
+  "order": 8,
+  "prerequisites": ["cc-003", "cc-004"],
+  "estimatedMinutes": 15,
+  "concept": "Structured prompt patterns"
+}

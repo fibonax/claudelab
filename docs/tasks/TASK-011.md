@@ -2,7 +2,7 @@
 
 **Priority:** P1
 **Estimated Effort:** 2h
-**Status:** TODO
+**Status:** DONE
 **Dependencies:** TASK-001
 **Blocked By:** TASK-001
 
@@ -29,19 +29,19 @@ Create the capstone exercise teaching three structured prompt patterns: Explore 
 
 ### Acceptance Criteria
 
-- [ ] AC-1: `setup.sh` creates: `src/api/handlers.ts` (no validation), `src/api/types.ts`, empty `src/tests/` dir, `CLAUDE.md` with code style conventions
-- [ ] AC-2: `src/api/handlers.ts` has a realistic API handler that accepts user input without validation
-- [ ] AC-3: `validate.sh` checks all three deliverables:
+- [x] AC-1: `setup.sh` creates: `src/api/handlers.ts` (no validation), `src/api/types.ts`, empty `src/tests/` dir, `CLAUDE.md` with code style conventions
+- [x] AC-2: `src/api/handlers.ts` has a realistic API handler that accepts user input without validation
+- [x] AC-3: `validate.sh` checks all three deliverables:
   - (a) `exploration.md` exists, mentions API/handler/endpoint, ≥5 lines
   - (b) `src/tests/handlers.test.ts` exists, contains test/describe/it code
   - (c) `plan.md` exists, contains numbered steps (regex `[1-3]\.` or `Step [1-3]`)
   - (d) `src/api/handlers.ts` contains "validate" or "validation" or a type check
-- [ ] AC-4: `instructions.md` clearly explains the three prompt patterns with examples
-- [ ] AC-5: Each pattern has a concrete task the learner must complete (not just theory)
-- [ ] AC-6: `validate.sh` provides specific feedback per deliverable (which pattern's output is missing)
-- [ ] AC-7: Hints address all three patterns progressively
-- [ ] AC-8: `setup.sh` is idempotent
-- [ ] AC-9: On successful completion, validation includes a track graduation message
+- [x] AC-4: `instructions.md` clearly explains the three prompt patterns with examples
+- [x] AC-5: Each pattern has a concrete task the learner must complete (not just theory)
+- [x] AC-6: `validate.sh` provides specific feedback per deliverable (which pattern's output is missing)
+- [x] AC-7: Hints address all three patterns progressively
+- [x] AC-8: `setup.sh` is idempotent
+- [x] AC-9: On successful completion, validation includes a track graduation message
 
 ### Technical Notes
 

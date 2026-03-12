@@ -1,0 +1,10 @@
+{
+  "id": "cc-005",
+  "title": "The Great Refactor",
+  "track": "fundamentals",
+  "difficulty": "intermediate",
+  "order": 5,
+  "prerequisites": ["cc-004"],
+  "estimatedMinutes": 15,
+  "concept": "Multi-file coordinated edits"
+}

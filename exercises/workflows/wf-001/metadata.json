@@ -1,0 +1,10 @@
+{
+  "id": "wf-001",
+  "title": "Hook Line",
+  "track": "workflows",
+  "difficulty": "beginner",
+  "order": 1,
+  "prerequisites": [],
+  "estimatedMinutes": 10,
+  "concept": "Hook configuration and automation"
+}

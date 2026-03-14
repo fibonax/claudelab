@@ -32,8 +32,8 @@ All exercise tasks (TASK-015 through TASK-022) depend only on TASK-014. They can
 
 | ID | Title | Priority | Effort | Status | Dependencies | Assignee |
 |---|---|---|---|---|---|---|
-| TASK-014 | Multi-Track Infrastructure Refactoring | P0 | 3h | TODO | None | — |
-| TASK-015 | Exercise wf-001 — Hook Line | P0 | 2h | TODO | TASK-014 | — |
+| TASK-014 | Multi-Track Infrastructure Refactoring | P0 | 3h | DONE | None | — |
+| TASK-015 | Exercise wf-001 — Hook Line | P0 | 2h | DONE | TASK-014 | — |
 | TASK-016 | Exercise wf-002 — Guard Rails | P0 | 2h | TODO | TASK-014 | — |
 | TASK-017 | Exercise wf-003 — Command Crafter | P0 | 2h | TODO | TASK-014 | — |
 | TASK-018 | Exercise wf-004 — Skill Surgeon | P1 | 2h | TODO | TASK-014 | — |

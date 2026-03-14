@@ -2,7 +2,7 @@
 
 **Priority:** P0
 **Estimated Effort:** 2h
-**Status:** TODO
+**Status:** DONE
 **Dependencies:** TASK-014
 **Blocked By:** TASK-014
 
@@ -27,13 +27,13 @@ Create the first Workflows track exercise teaching Claude Code hook configuratio
 
 ### Acceptance Criteria
 
-- [ ] AC-1: `metadata.json` has correct fields: id "wf-001", track "workflows", order 1, prerequisites []
-- [ ] AC-2: `setup.sh` is idempotent and creates workspace with all scaffold files
-- [ ] AC-3: `validate.sh` checks all 8 validation criteria from curriculum (settings.json exists, hooks key, event name, matcher, command, script exists, exit handling, executable)
-- [ ] AC-4: `validate.sh` provides clear FAIL messages explaining what's wrong
-- [ ] AC-5: `instructions.md` explains hook events, shows settings.json structure, guides through both settings.json and hook script creation
-- [ ] AC-6: `hints.md` has 3 levels separated by `## Hint` markers
-- [ ] AC-7: Exercise passes `/validate-exercise wf-001`
+- [x] AC-1: `metadata.json` has correct fields: id "wf-001", track "workflows", order 1, prerequisites []
+- [x] AC-2: `setup.sh` is idempotent and creates workspace with all scaffold files
+- [x] AC-3: `validate.sh` checks all 8 validation criteria from curriculum (settings.json exists, hooks key, event name, matcher, command, script exists, exit handling, executable)
+- [x] AC-4: `validate.sh` provides clear FAIL messages explaining what's wrong
+- [x] AC-5: `instructions.md` explains hook events, shows settings.json structure, guides through both settings.json and hook script creation
+- [x] AC-6: `hints.md` has 3 levels separated by `## Hint` markers
+- [x] AC-7: Exercise passes `/validate-exercise wf-001`
 
 ### Technical Notes
 

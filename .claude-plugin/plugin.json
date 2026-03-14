@@ -7,7 +7,7 @@
     "url": "https://github.com/3t-dev/claudelab"
   },
   "repository": "https://github.com/3t-dev/claudelab",
-  "license": "MIT",
+  "license": "AGPL-3.0",
   "keywords": ["learning", "tutorial", "exercises", "fundamentals"],
   "skills": "./.claude/skills/"
 }

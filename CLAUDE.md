@@ -15,7 +15,7 @@ tutorial system where each exercise has setup, instructions, validation, and hin
 cclab/
 ├── CLAUDE.md
 ├── README.md
-├── LICENSE                             # MIT
+├── LICENSE                             # AGPL-3.0
 ├── .gitignore
 │
 ├── .claude-plugin/

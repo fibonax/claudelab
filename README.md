@@ -1,3 +1,12 @@
+```
+  _____ _____ _               ____
+ / ____/ ____| |        /\   |  _ \
+| |   | |    | |       /  \  | |_) |
+| |   | |    | |      / /\ \ |  _ <      cclab: learn Claude Code inside Claude Code
+| |___| |____| |____ / ____ \| |_) |     v0.2.0 · 2 tracks · 16 exercises
+ \_____\_____|______/_/    \_\____/      thanhtt@fibonax.dev
+```
+
 # ClaudeLab (cclab)
 
 An interactive tutorial system that teaches Claude Code — directly inside Claude Code. Learn through progressive, validated exercises with setup, instructions, validation, and hints.
@@ -93,6 +102,63 @@ claude
 
 > **Note:** Your exercise files are created in `~/.cclab/workspace/`, not in the
 > cloned repository. The plugin source directory stays clean.
+
+## cclab-validator
+
+`cclab-validator` is a Rust CLI tool (in `tools/cclab-validator/`) that tests exercise solvability end-to-end. It spawns Claude Code to solve each exercise as a real learner would — running `/start`, solving the exercise, then running `/check` — and reports pass/fail.
+
+If an exercise fails, its instructions or validation are broken.
+
+### Build
+
+```bash
+cd tools/cclab-validator
+cargo build --release
+```
+
+### Usage
+
+```bash
+# Test a single exercise
+cclab-validator --exercise cc-001
+
+# Test an entire track
+cclab-validator --track fundamentals
+
+# Test all exercises
+cclab-validator --all
+
+# Use a specific model (default: sonnet)
+cclab-validator --model opus --exercise cc-001
+
+# Show Claude's full output for debugging
+cclab-validator --exercise cc-001 --verbose
+
+# Keep going after a failure
+cclab-validator --all --continue-on-fail
+```
+
+### Options
+
+| Flag | Description |
+|---|---|
+| `-e, --exercise <id>` | Run a specific exercise (e.g., `cc-001`, `wf-003`) |
+| `-t, --track <name>` | Run all exercises in a track (e.g., `fundamentals`) |
+| `-a, --all` | Run all exercises |
+| `-m, --model <model>` | Model to use (default: `sonnet`) |
+| `--max-budget <usd>` | Max budget per exercise in USD (default: `0.50`) |
+| `-v, --verbose` | Show Claude's full output stream |
+| `-c, --continue-on-fail` | Continue running after a failure |
+| `--plugin-dir <path>` | Path to cclab plugin root (auto-detected if not set) |
+
+### How It Works
+
+1. Resets the exercise workspace and `progress.json` to a clean state
+2. Spawns `claude -p` with a prompt that instructs Claude to run `/cclab:start`, solve the exercise, and run `/cclab:check`
+3. Parses the output for `PASS` or `FAIL` markers
+4. Reports results with timing and cost data
+
+This tool is meant for exercise authors to validate that exercises are solvable before shipping them.
 
 ## Development
 

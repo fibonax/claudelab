@@ -100,4 +100,4 @@ See [CLAUDE.md](./CLAUDE.md) for project conventions and the development pipelin
 
 ## License
 
-MIT
+AGPL-3.0

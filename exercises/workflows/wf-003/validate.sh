@@ -35,9 +35,10 @@ if [ "$DELIMITER_COUNT" -lt 2 ]; then
   PASS=false
 fi
 
-# Check 5: Contains numbered steps (e.g., 1. or Step)
-if ! grep -qE '[1-3]\.' "$SKILL_FILE"; then
-  echo "FAIL: SKILL.md missing numbered steps"
+# Check 5: Contains at least 3 numbered steps
+STEP_COUNT=$(grep -cE "^[0-9]+\." "$SKILL_FILE" || true)
+if [ "$STEP_COUNT" -lt 3 ]; then
+  echo "FAIL: SKILL.md has fewer than 3 numbered steps (found $STEP_COUNT)"
   echo "  Include at least 3 numbered steps (e.g., 1. Read the file, 2. Analyze it, 3. Explain it)."
   PASS=false
 fi

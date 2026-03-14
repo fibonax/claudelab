@@ -41,7 +41,7 @@ All exercise tasks (TASK-015 through TASK-022) depend only on TASK-014. They can
 | TASK-020 | Exercise wf-006 — Plan & Conquer | P1 | 2.5h | DONE | TASK-014 | — |
 | TASK-021 | Exercise wf-007 — Plug It In + MCP Server | P1 | 3h | DONE | TASK-014 | — |
 | TASK-022 | Exercise wf-008 — Branch Out | P1 | 2h | DONE | TASK-014 | — |
-| TASK-023 | Integration Testing & QA | P2 | 2h | TODO | All above | — |
+| TASK-023 | Integration Testing & QA | P2 | 2h | DONE | All above | — |
 
 ### Implementation Order
 
@@ -83,7 +83,7 @@ For single-developer execution (implementing one task at a time):
 - [x] Wave 1 complete (infrastructure)
 - [x] Wave 2 complete (gateway + core exercises)
 - [x] Wave 3 complete (remaining exercises)
-- [ ] Wave 4 complete (QA)
+- [x] Wave 4 complete (QA)
 - [ ] All 8 Fundamentals exercises still pass after infrastructure changes
 - [ ] All 8 Workflows exercises pass `/validate-exercise`
 - [ ] End-to-end: fresh install → /cclab:start → wf-001 loads → /cclab:check passes

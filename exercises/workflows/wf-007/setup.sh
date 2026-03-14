@@ -5,6 +5,7 @@
 WORKSPACE="$HOME/.cclab/workspace/wf-007"
 
 mkdir -p "$WORKSPACE/tools"
+mkdir -p "$WORKSPACE/.claude"
 
 # CLAUDE.md — project description
 cat > "$WORKSPACE/CLAUDE.md" << 'EOF'

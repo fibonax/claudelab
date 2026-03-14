@@ -50,8 +50,8 @@ if [ ! -f "$WORKSPACE/scripts/log-edits.sh" ]; then
   echo "  Create a hook script at scripts/log-edits.sh."
   PASS=false
 else
-  # Check 7: log-edits.sh contains exit handling
-  if ! grep -qE "exit( 0)?" "$WORKSPACE/scripts/log-edits.sh"; then
+  # Check 7: log-edits.sh contains exit 0 (allows the action to proceed)
+  if ! grep -qE "exit\s*0?\s*$" "$WORKSPACE/scripts/log-edits.sh" || grep -qE "exit\s+[1-9]" "$WORKSPACE/scripts/log-edits.sh"; then
     echo "FAIL: scripts/log-edits.sh missing exit handling"
     echo "  Add 'exit 0' to your script so the hook allows the action to proceed."
     PASS=false

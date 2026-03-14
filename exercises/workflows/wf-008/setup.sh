@@ -14,6 +14,7 @@ if [ "$GIT_MAJOR" -lt 2 ] || { [ "$GIT_MAJOR" -eq 2 ] && [ "$GIT_MINOR" -lt 5 ];
 fi
 
 mkdir -p "$WORKSPACE/src"
+mkdir -p "$WORKSPACE/.worktrees"
 
 # If .git already exists, clean up and reset to initial state
 if [ -d "$WORKSPACE/.git" ]; then
@@ -134,6 +135,12 @@ fi
 # Ensure .worktrees/ is gitignored (so worktree dir doesn't make main dirty)
 if ! grep -q '.worktrees/' "$WORKSPACE/.gitignore" 2>/dev/null; then
   echo ".worktrees/" >> "$WORKSPACE/.gitignore"
+fi
+
+# Ensure git identity is set for commits (needed on fresh machines)
+if ! git -C "$WORKSPACE" config user.email >/dev/null 2>&1; then
+  git -C "$WORKSPACE" config user.email "cclab@exercise"
+  git -C "$WORKSPACE" config user.name "cclab"
 fi
 
 # Stage and commit all files

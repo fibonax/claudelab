@@ -42,9 +42,9 @@ if ! grep -q "^argument-hint:" "$SKILL_FILE"; then
   PASS=false
 fi
 
-# Check 6: SKILL.md contains disable-model-invocation:
-if ! grep -q "^disable-model-invocation:" "$SKILL_FILE"; then
-  echo "FAIL: SKILL.md missing disable-model-invocation: in frontmatter"
+# Check 6: SKILL.md contains disable-model-invocation: true
+if ! grep -qE "^disable-model-invocation:\s*true" "$SKILL_FILE"; then
+  echo "FAIL: SKILL.md missing disable-model-invocation: true in frontmatter"
   echo "  Add disable-model-invocation: true to prevent automatic invocation."
   PASS=false
 fi

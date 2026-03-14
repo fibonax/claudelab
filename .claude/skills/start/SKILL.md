@@ -42,7 +42,7 @@ The banner must appear exactly like this (the triple backticks are part of your 
  / ____/ ____| |        /\   |  _ \
 | |   | |    | |       /  \  | |_) |
 | |   | |    | |      / /\ \ |  _ <      cclab: learn Claude Code by using Claude Code
-| |___| |____| |____ / ____ \| |_) |     v0.1.0 · fundamentals · 8 exercises
+| |___| |____| |____ / ____ \| |_) |     v0.2.0 · 2 tracks · 16 exercises
  \_____\_____|______/_/    \_\____/      thanhtt@fibonax.dev
 ```
 ````
@@ -67,21 +67,35 @@ Using the Bash tool, create the runtime directories if they don't exist:
 mkdir -p ~/.cclab/workspace
 ```
 
-### Step 3: Load or create progress state
+### Step 3: Discover all exercises
+
+Use Glob to find all exercise metadata: `$PLUGIN_ROOT/exercises/*/*/metadata.json`
+
+For each matched file, read the `metadata.json` to extract `id`, `title`, `track`, and `order`.
+
+Group exercises by `track`. The track order is:
+1. `fundamentals` (first)
+2. `workflows` (second)
+3. Any other tracks alphabetically
+
+Within each track, sort by the `order` field.
+
+Build a flat ordered list of all exercise IDs following this track order.
+
+If no exercises are found, tell the user: "No exercises are available yet. Check back later or verify the cclab plugin installation." Stop here.
+
+### Step 4: Load or create progress state
 
 Read `~/.cclab/progress.json` using the Read tool.
 
 **If the file does NOT exist (first run):**
 
-1. Discover all exercises by listing directories under `$PLUGIN_ROOT/exercises/fundamentals/` that match the `cc-NNN` pattern (use Glob: `exercises/fundamentals/cc-*/metadata.json`)
-2. Sort them by ID numerically (cc-001, cc-002, ...)
-3. If no exercises are found, tell the user: "No exercises are available yet. Check back later or verify the cclab plugin installation." Stop here.
-4. Set the first exercise as `current_exercise`
-5. Write `~/.cclab/progress.json` using the Write tool:
+1. Set the first exercise from the ordered list as `current_exercise`
+2. Write `~/.cclab/progress.json` using the Write tool:
 
 ```json
 {
-  "current_exercise": "cc-001",
+  "current_exercise": "<first-exercise-id>",
   "completed": [],
   "hints_seen": {},
   "started_at": "<current ISO timestamp>",
@@ -95,48 +109,74 @@ Read `~/.cclab/progress.json` using the Read tool.
 2. If the JSON is corrupted (cannot parse), back it up to `~/.cclab/progress.json.bak`, create a fresh one as above, and warn the user: "Progress file was corrupted. A backup was saved and progress has been reset."
 3. Use the `current_exercise` field to determine which exercise to load
 
-### Step 4: Check for completion
+### Step 5: Check for track completion and transitions
 
-Discover all exercise IDs from `$PLUGIN_ROOT/exercises/fundamentals/cc-*/metadata.json`.
+Using the ordered exercise list from Step 3 and the `completed` array from progress.json:
 
-If `current_exercise` is null or all discovered exercises appear in the `completed` array, display:
+**If `current_exercise` is null or ALL exercises across ALL tracks are in `completed`:**
+
+Display:
 
 ```
-You've completed the Fundamentals track!
-Next up: the Workflows track — custom slash commands, hooks, and permissions.
-Stay tuned for future updates!
+You've completed all cclab tracks — Fundamentals and Workflows!
+You've mastered CLAUDE.md, prompting, git, hooks, skills, subagents, MCP, and worktrees.
+Go build something amazing with your new Claude Code superpowers!
 ```
 
 Stop here — do not proceed further.
 
-### Step 5: Validate current exercise exists
+**If all exercises in the CURRENT track are complete but exercises remain in the NEXT track:**
 
-If `current_exercise` references an exercise that doesn't exist on disk (no matching directory under `exercises/fundamentals/`), reset to the first available uncompleted exercise and warn: "Exercise <id> was not found. Resuming from <new-id>."
+Determine the current track from `current_exercise`. If all exercises in that track are in `completed`, and there is a next track with uncompleted exercises:
 
-### Step 6: Run exercise setup
+1. Find the first uncompleted exercise in the next track
+2. Set `current_exercise` to that exercise
+3. Display a track transition message:
 
-Check if `$PLUGIN_ROOT/exercises/fundamentals/<current_exercise>/setup.sh` exists.
+```
+You've completed the Fundamentals track! Moving on to Workflows — hooks, skills, subagents, MCP, and worktrees.
+```
+
+(Adjust the message based on which track was completed and which is next.)
+
+### Step 5.5: Handle direct Workflows start (no Fundamentals completed)
+
+If `current_exercise` is a Workflows exercise (track = "workflows") and the `completed` array does NOT contain all Fundamentals exercises, this is fine — the user chose to start Workflows directly or was advanced to it. No blocking, no warning needed at this point (the recommendation was shown when they first selected the track).
+
+If the user has no progress at all and wants to start with Workflows instead of Fundamentals, they can manually set their `current_exercise` to "wf-001" or the skill can offer track selection (see Step 5 transition logic).
+
+### Step 6: Validate current exercise exists
+
+Use Glob to find: `$PLUGIN_ROOT/exercises/*/<current_exercise>/metadata.json`
+
+If no match is found (exercise doesn't exist on disk), find the first available uncompleted exercise from the ordered list and warn: "Exercise <id> was not found. Resuming from <new-id>."
+
+Store the matched track directory as `TRACK`.
+
+### Step 7: Run exercise setup
+
+Check if `$PLUGIN_ROOT/exercises/<TRACK>/<current_exercise>/setup.sh` exists.
 
 If it exists, run it using the Bash tool:
 
 ```bash
-bash "$PLUGIN_ROOT/exercises/fundamentals/<current_exercise>/setup.sh"
+bash "$PLUGIN_ROOT/exercises/<TRACK>/<current_exercise>/setup.sh"
 ```
 
 The setup script is idempotent — safe to run multiple times. It creates the workspace directory and scaffolds initial files.
 
 If setup.sh does not exist, skip this step silently.
 
-### Step 7: Present the exercise
+### Step 8: Present the exercise
 
-1. Read `$PLUGIN_ROOT/exercises/fundamentals/<current_exercise>/metadata.json` — extract `title`, `difficulty`, `estimatedMinutes`
-2. Read `$PLUGIN_ROOT/exercises/fundamentals/<current_exercise>/instructions.md`
+1. Read `$PLUGIN_ROOT/exercises/<TRACK>/<current_exercise>/metadata.json` — extract `title`, `difficulty`, `estimatedMinutes`, `track`
+2. Read `$PLUGIN_ROOT/exercises/<TRACK>/<current_exercise>/instructions.md`
 3. Display to the user in this format:
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  cclab — <title>
- Exercise <exercise-id> | <difficulty> | ~<estimatedMinutes> min
+ Exercise <exercise-id> | <track> | <difficulty> | ~<estimatedMinutes> min
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 <instructions.md content>
@@ -148,6 +188,6 @@ If setup.sh does not exist, skip this step silently.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-### Step 8: Update timestamp
+### Step 9: Update timestamp
 
 Update `updated_at` in `~/.cclab/progress.json` to the current ISO timestamp and write it back.

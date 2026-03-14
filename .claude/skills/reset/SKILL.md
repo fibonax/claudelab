@@ -33,9 +33,16 @@ If `current_exercise` is null, tell the user:
 "All exercises are complete! There's no current exercise to reset. If you'd like to redo an exercise, run `/cclab:start` to see your options."
 Stop here.
 
-### Step 3: Confirm with the user
+### Step 3: Resolve exercise path
 
-Read `$PLUGIN_ROOT/exercises/fundamentals/<current_exercise>/metadata.json` to get the exercise title.
+Use Glob to find the exercise: `$PLUGIN_ROOT/exercises/*/<current_exercise>/metadata.json`
+
+The exercise may be in any track directory (e.g., `exercises/fundamentals/cc-003/` or `exercises/workflows/wf-001/`).
+Store the matched track directory name as `TRACK`. The exercise path is: `$PLUGIN_ROOT/exercises/<TRACK>/<current_exercise>/`
+
+### Step 4: Confirm with the user
+
+Read `$PLUGIN_ROOT/exercises/<TRACK>/<current_exercise>/metadata.json` to get the exercise title.
 
 Ask the user for confirmation using the AskUserQuestion tool:
 
@@ -45,14 +52,14 @@ If the user does NOT confirm (answers anything other than a clear affirmative li
 "Reset cancelled."
 Stop here.
 
-### Step 4: Re-run setup
+### Step 5: Re-run setup
 
-Check if `$PLUGIN_ROOT/exercises/fundamentals/<current_exercise>/setup.sh` exists.
+Check if `$PLUGIN_ROOT/exercises/<TRACK>/<current_exercise>/setup.sh` exists.
 
 If it exists, run it using the Bash tool:
 
 ```bash
-bash "$PLUGIN_ROOT/exercises/fundamentals/<current_exercise>/setup.sh"
+bash "$PLUGIN_ROOT/exercises/<TRACK>/<current_exercise>/setup.sh"
 ```
 
 The setup script is idempotent — it recreates the workspace directory and restores scaffold files to their initial state.
@@ -60,7 +67,7 @@ The setup script is idempotent — it recreates the workspace directory and rest
 If setup.sh does not exist, tell the user:
 "No setup script found for <current_exercise>. Workspace was not modified."
 
-### Step 5: Clear hint progress
+### Step 6: Clear hint progress
 
 Update `~/.cclab/progress.json`:
 - Set `hints_seen.<current_exercise>` to `0` (or remove the entry)
@@ -70,7 +77,7 @@ Update `~/.cclab/progress.json`:
 
 Write the updated JSON back to the file.
 
-### Step 6: Confirm reset
+### Step 7: Confirm reset
 
 Display:
 

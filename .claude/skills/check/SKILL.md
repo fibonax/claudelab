@@ -33,7 +33,14 @@ If `current_exercise` is null, tell the user:
 "All exercises are complete! Run `/cclab:start` to see your graduation message."
 Stop here.
 
-### Step 3: Verify workspace exists
+### Step 3: Resolve exercise path
+
+Use Glob to find the exercise: `$PLUGIN_ROOT/exercises/*/<current_exercise>/metadata.json`
+
+The exercise may be in any track directory (e.g., `exercises/fundamentals/cc-003/` or `exercises/workflows/wf-001/`).
+Store the matched track directory name as `TRACK`. The exercise path is: `$PLUGIN_ROOT/exercises/<TRACK>/<current_exercise>/`
+
+### Step 4: Verify workspace exists
 
 Check if `~/.cclab/workspace/<current_exercise>/` exists.
 
@@ -41,9 +48,9 @@ If it doesn't, tell the user:
 "Workspace not set up for <current_exercise>. Run `/cclab:start` first."
 Stop here.
 
-### Step 4: Run validation
+### Step 5: Run validation
 
-Check if `$PLUGIN_ROOT/exercises/fundamentals/<current_exercise>/validate.sh` exists.
+Check if `$PLUGIN_ROOT/exercises/<TRACK>/<current_exercise>/validate.sh` exists.
 
 If it doesn't exist, tell the user:
 "Validation script not found for <current_exercise>. The exercise may be incomplete."
@@ -52,23 +59,24 @@ Stop here.
 Execute the validation script using the Bash tool:
 
 ```bash
-cd ~/.cclab/workspace/<current_exercise> && bash "$PLUGIN_ROOT/exercises/fundamentals/<current_exercise>/validate.sh"
+cd ~/.cclab/workspace/<current_exercise> && bash "$PLUGIN_ROOT/exercises/<TRACK>/<current_exercise>/validate.sh"
 ```
 
 Capture:
 - The exit code (0 = PASS, non-zero = FAIL)
 - The stdout output (feedback message)
 
-### Step 5: Report results
+### Step 6: Report results
 
-Read `$PLUGIN_ROOT/exercises/fundamentals/<current_exercise>/metadata.json` to get the exercise title.
+Read `$PLUGIN_ROOT/exercises/<TRACK>/<current_exercise>/metadata.json` to get the exercise title.
 
 **On PASS (exit code 0):**
 
 1. Update `~/.cclab/progress.json`:
    - Add `current_exercise` to the `completed` array (if not already present)
-   - Discover all exercises from `$PLUGIN_ROOT/exercises/fundamentals/cc-*/metadata.json`, sorted by ID
-   - Find the next exercise that is NOT in `completed`
+   - Discover all exercises from `$PLUGIN_ROOT/exercises/*/*/metadata.json` (all tracks), read each metadata.json to get `id`, `track`, and `order`
+   - Sort exercises: group by track (fundamentals first, then workflows), within each track sort by `order`
+   - Find the next exercise in this ordered list that is NOT in `completed`
    - Set `current_exercise` to that next exercise ID, or `null` if all are done
    - Update `updated_at` to current ISO timestamp
    - Write the updated JSON back to the file

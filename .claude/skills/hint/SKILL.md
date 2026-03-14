@@ -33,7 +33,14 @@ If `current_exercise` is null, tell the user:
 "All exercises are complete! No hints needed."
 Stop here.
 
-### Step 3: Determine hint level
+### Step 3: Resolve exercise path
+
+Use Glob to find the exercise: `$PLUGIN_ROOT/exercises/*/<current_exercise>/metadata.json`
+
+The exercise may be in any track directory (e.g., `exercises/fundamentals/cc-003/` or `exercises/workflows/wf-001/`).
+Store the matched track directory name as `TRACK`. The exercise path is: `$PLUGIN_ROOT/exercises/<TRACK>/<current_exercise>/`
+
+### Step 4: Determine hint level
 
 Look up `hints_seen` in progress.json for the current exercise ID:
 
@@ -42,9 +49,9 @@ Look up `hints_seen` in progress.json for the current exercise ID:
 - If entry value is 2: next hint level = **3**
 - If entry value is 3 (already seen all): show level **3** again (max level)
 
-### Step 4: Read the hint
+### Step 5: Read the hint
 
-Read `$PLUGIN_ROOT/exercises/fundamentals/<current_exercise>/hints.md` using the Read tool.
+Read `$PLUGIN_ROOT/exercises/<TRACK>/<current_exercise>/hints.md` using the Read tool.
 
 If the file doesn't exist, tell the user:
 "No hints available for this exercise. Review the instructions with `/cclab:start` or ask Claude for help directly."
@@ -60,7 +67,7 @@ Extract the content under the matching `## Hint <level>` heading — everything 
 
 If the expected section is not found, show whatever content is available and note: "Hint format is non-standard. Showing available content."
 
-### Step 5: Update hint tracking
+### Step 6: Update hint tracking
 
 Update `~/.cclab/progress.json`:
 - Set `hints_seen.<current_exercise>` to the hint level just shown (1, 2, or 3)
@@ -68,9 +75,9 @@ Update `~/.cclab/progress.json`:
 
 Write the updated JSON back to the file.
 
-### Step 6: Display the hint
+### Step 7: Display the hint
 
-Read `$PLUGIN_ROOT/exercises/fundamentals/<current_exercise>/metadata.json` to get the exercise title.
+Read `$PLUGIN_ROOT/exercises/<TRACK>/<current_exercise>/metadata.json` to get the exercise title.
 
 Display:
 

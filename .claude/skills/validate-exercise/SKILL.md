@@ -19,7 +19,7 @@ Verify all required files exist:
 - [ ] solution/expected.ts
 
 ### 2. Metadata validation
-- [ ] ID matches folder name pattern (cc-NNN)
+- [ ] ID matches folder name pattern (cc-NNN or wf-NNN)
 - [ ] Track is one of: fundamentals, skills, workflows, advanced
 - [ ] Difficulty is one of: beginner, intermediate, advanced
 - [ ] Prerequisites reference existing exercise IDs

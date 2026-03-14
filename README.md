@@ -10,8 +10,8 @@ When I started using Claude Code, I tried to find tutorials online but almost al
 
 ClaudeLab is a Claude Code plugin. Each exercise is self-contained with:
 
-- **Metadata** — ID (`cc-NNN`), track, difficulty
-- **Setup** — scaffolds a workspace at `~/.cclab/workspace/cc-NNN/`
+- **Metadata** — ID (`cc-NNN` / `wf-NNN`), track, difficulty
+- **Setup** — scaffolds a workspace at `~/.cclab/workspace/<exercise-id>/`
 - **Instructions** — what to do (markdown)
 - **Validation** — programmatic (deterministic) checks for correctness
 - **Hints** — progressive: gentle → specific → near-answer
@@ -42,7 +42,20 @@ Use these slash commands inside Claude Code:
 | cc-007 | Command Center | Beginner | Discover and document built-in slash commands |
 | cc-008 | Prompt Architect | Intermediate | Structured prompt patterns for better results (capstone) |
 
-More tracks planned: **Skills**, **Workflows**, **Advanced**.
+### Workflows Track (8 exercises)
+
+| # | Exercise | Difficulty | What You'll Learn |
+|---|---|---|---|
+| wf-001 | Hook Line | Beginner | Configure hooks that automate tasks on file edits |
+| wf-002 | Guard Rails | Beginner | Set up permissions to allow/deny tools and protect secrets |
+| wf-003 | Command Crafter | Beginner | Create a custom slash command with a SKILL.md file |
+| wf-004 | Skill Surgeon | Intermediate | Skills with arguments, hints, and manual-only invocation |
+| wf-005 | Agent Assembler | Intermediate | Create a specialized subagent with restricted tools |
+| wf-006 | Plan & Conquer | Intermediate | Combine a planning skill + implementation subagents (capstone) |
+| wf-007 | Plug It In | Intermediate | Configure an MCP server to extend Claude Code with tools |
+| wf-008 | Branch Out | Intermediate | Use git worktrees for parallel isolated work |
+
+More tracks planned: **Advanced**.
 
 ## Getting Started
 

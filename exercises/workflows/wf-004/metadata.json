@@ -1,0 +1,10 @@
+{
+  "id": "wf-004",
+  "title": "Skill Surgeon",
+  "track": "workflows",
+  "difficulty": "intermediate",
+  "order": 4,
+  "prerequisites": ["wf-003"],
+  "estimatedMinutes": 15,
+  "concept": "Skills with arguments and advanced config"
+}

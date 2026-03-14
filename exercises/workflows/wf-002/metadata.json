@@ -1,0 +1,10 @@
+{
+  "id": "wf-002",
+  "title": "Guard Rails",
+  "track": "workflows",
+  "difficulty": "beginner",
+  "order": 2,
+  "prerequisites": ["wf-001"],
+  "estimatedMinutes": 10,
+  "concept": "Permissions and settings.json"
+}

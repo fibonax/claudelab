@@ -1,0 +1,10 @@
+{
+  "id": "wf-008",
+  "title": "Branch Out",
+  "track": "workflows",
+  "difficulty": "intermediate",
+  "order": 8,
+  "prerequisites": ["wf-001"],
+  "estimatedMinutes": 10,
+  "concept": "Git worktrees for parallel work"
+}

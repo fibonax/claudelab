@@ -34,13 +34,13 @@ All exercise tasks (TASK-015 through TASK-022) depend only on TASK-014. They can
 |---|---|---|---|---|---|---|
 | TASK-014 | Multi-Track Infrastructure Refactoring | P0 | 3h | DONE | None | — |
 | TASK-015 | Exercise wf-001 — Hook Line | P0 | 2h | DONE | TASK-014 | — |
-| TASK-016 | Exercise wf-002 — Guard Rails | P0 | 2h | TODO | TASK-014 | — |
-| TASK-017 | Exercise wf-003 — Command Crafter | P0 | 2h | TODO | TASK-014 | — |
-| TASK-018 | Exercise wf-004 — Skill Surgeon | P1 | 2h | TODO | TASK-014 | — |
-| TASK-019 | Exercise wf-005 — Agent Assembler | P1 | 2h | TODO | TASK-014 | — |
-| TASK-020 | Exercise wf-006 — Plan & Conquer | P1 | 2.5h | TODO | TASK-014 | — |
-| TASK-021 | Exercise wf-007 — Plug It In + MCP Server | P1 | 3h | TODO | TASK-014 | — |
-| TASK-022 | Exercise wf-008 — Branch Out | P1 | 2h | TODO | TASK-014 | — |
+| TASK-016 | Exercise wf-002 — Guard Rails | P0 | 2h | DONE | TASK-014 | — |
+| TASK-017 | Exercise wf-003 — Command Crafter | P0 | 2h | DONE | TASK-014 | — |
+| TASK-018 | Exercise wf-004 — Skill Surgeon | P1 | 2h | DONE | TASK-014 | — |
+| TASK-019 | Exercise wf-005 — Agent Assembler | P1 | 2h | DONE | TASK-014 | — |
+| TASK-020 | Exercise wf-006 — Plan & Conquer | P1 | 2.5h | DONE | TASK-014 | — |
+| TASK-021 | Exercise wf-007 — Plug It In + MCP Server | P1 | 3h | DONE | TASK-014 | — |
+| TASK-022 | Exercise wf-008 — Branch Out | P1 | 2h | DONE | TASK-014 | — |
 | TASK-023 | Integration Testing & QA | P2 | 2h | TODO | All above | — |
 
 ### Implementation Order
@@ -80,9 +80,9 @@ For single-developer execution (implementing one task at a time):
 
 ### Progress Tracking
 
-- [ ] Wave 1 complete (infrastructure)
-- [ ] Wave 2 complete (gateway + core exercises)
-- [ ] Wave 3 complete (remaining exercises)
+- [x] Wave 1 complete (infrastructure)
+- [x] Wave 2 complete (gateway + core exercises)
+- [x] Wave 3 complete (remaining exercises)
 - [ ] Wave 4 complete (QA)
 - [ ] All 8 Fundamentals exercises still pass after infrastructure changes
 - [ ] All 8 Workflows exercises pass `/validate-exercise`

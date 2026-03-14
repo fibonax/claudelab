@@ -1,0 +1,10 @@
+{
+  "id": "wf-003",
+  "title": "Command Crafter",
+  "track": "workflows",
+  "difficulty": "beginner",
+  "order": 3,
+  "prerequisites": ["wf-001"],
+  "estimatedMinutes": 15,
+  "concept": "Creating a custom skill (SKILL.md)"
+}

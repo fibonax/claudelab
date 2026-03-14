@@ -1,0 +1,10 @@
+{
+  "id": "wf-006",
+  "title": "Plan & Conquer",
+  "track": "workflows",
+  "difficulty": "intermediate",
+  "order": 6,
+  "prerequisites": ["wf-004", "wf-005"],
+  "estimatedMinutes": 20,
+  "concept": "Combining skills + subagents into a workflow"
+}

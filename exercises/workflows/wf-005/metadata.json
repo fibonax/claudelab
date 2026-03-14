@@ -1,0 +1,10 @@
+{
+  "id": "wf-005",
+  "title": "Agent Assembler",
+  "track": "workflows",
+  "difficulty": "intermediate",
+  "order": 5,
+  "prerequisites": ["wf-003"],
+  "estimatedMinutes": 15,
+  "concept": "Creating a specialized subagent"
+}

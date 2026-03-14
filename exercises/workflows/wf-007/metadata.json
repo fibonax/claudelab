@@ -1,0 +1,10 @@
+{
+  "id": "wf-007",
+  "title": "Plug It In",
+  "track": "workflows",
+  "difficulty": "intermediate",
+  "order": 7,
+  "prerequisites": ["wf-002"],
+  "estimatedMinutes": 15,
+  "concept": "Configuring an MCP server connection"
+}

@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.2.1 — 2026-03-15
+
+### Changes
+
+- Standardize plugin configuration file (`plugin.json` and `marketplace.json`) for marketplace distribution
+- Add notice about known issue of dev-only skills loading when installing as a plugin
+
 ## v0.2.0 — 2026-03-15
 
 The first public release of ClaudeLab (cclab), a Claude Code plugin that teaches Claude Code through progressive, validated exercises — directly inside Claude Code.

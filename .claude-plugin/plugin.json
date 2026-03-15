@@ -1,13 +1,28 @@
 {
   "name": "cclab",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Learn Claude Code by doing — progressive, validated exercises directly inside Claude Code",
   "author": {
-    "name": "Thanh",
-    "url": "https://github.com/fibonax/claudelab"
+    "name": "Thanh Trinh",
+    "email": "thanhtt@fibonax.dev",
+    "url": "https://github.com/fibonax"
   },
   "repository": "https://github.com/fibonax/claudelab",
+  "homepage": "https://github.com/fibonax/claudelab",
   "license": "AGPL-3.0",
-  "keywords": ["learning", "tutorial", "exercises", "fundamentals"],
-  "skills": "./.claude/skills/"
+  "keywords": [
+    "learning",
+    "tutorial",
+    "exercises",
+    "fundamentals",
+    "claude-code"
+  ],
+  "skills": [
+    "./.claude/skills/start/",
+    "./.claude/skills/check/",
+    "./.claude/skills/hint/",
+    "./.claude/skills/status/",
+    "./.claude/skills/reset/",
+    "./.claude/skills/setup/"
+  ]
 }

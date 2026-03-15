@@ -66,6 +66,10 @@ Use these slash commands inside Claude Code:
 
 More tracks planned: **Advanced**.
 
+> **Known issue:** After installing, you may see additional developer-only skills
+> (e.g., `/create-exercise`, `/prd-create`, `/task-planning`). These are internal tools for
+> exercise authors — learners can safely ignore them. Only use the 6 skills listed above.
+
 ## Getting Started
 
 ### Package Install

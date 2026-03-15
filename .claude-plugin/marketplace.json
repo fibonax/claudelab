@@ -1,0 +1,18 @@
+{
+  "name": "fibonax-claudelab",
+  "owner": {
+    "name": "Thanh Trinh",
+    "url": "https://github.com/fibonax"
+  },
+  "plugins": [
+    {
+      "name": "cclab",
+      "description": "Learn Claude Code by doing — progressive, validated exercises directly inside Claude Code",
+      "version": "0.2.0",
+      "source": {
+        "source": "github",
+        "repo": "fibonax/claudelab"
+      }
+    }
+  ]
+}

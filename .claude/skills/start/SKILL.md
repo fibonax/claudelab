@@ -41,8 +41,8 @@ The banner must appear exactly like this (the triple backticks are part of your 
   _____ _____ _               ____
  / ____/ ____| |        /\   |  _ \
 | |   | |    | |       /  \  | |_) |
-| |   | |    | |      / /\ \ |  _ <      cclab: learn Claude Code by using Claude Code
-| |___| |____| |____ / ____ \| |_) |     v0.2.0 · 2 tracks · 16 exercises
+| |   | |    | |      / /\ \ |  _ <      cclab: learn Claude Code inside Claude Code
+| |___| |____| |____ / ____ \| |_) |     v0.2.1 · 2 tracks · 16 exercises
  \_____\_____|______/_/    \_\____/      thanhtt@fibonax.dev
 ```
 ````

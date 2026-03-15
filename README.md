@@ -3,7 +3,7 @@
  / ____/ ____| |        /\   |  _ \
 | |   | |    | |       /  \  | |_) |
 | |   | |    | |      / /\ \ |  _ <      cclab: learn Claude Code inside Claude Code
-| |___| |____| |____ / ____ \| |_) |     v0.2.0 · 2 tracks · 16 exercises
+| |___| |____| |____ / ____ \| |_) |     v0.2.1 · 2 tracks · 16 exercises
  \_____\_____|______/_/    \_\____/      thanhtt@fibonax.dev
 ```
 
@@ -25,16 +25,16 @@ ClaudeLab is a Claude Code plugin. Each exercise is self-contained with:
 - **Validation** — programmatic (deterministic) checks for correctness
 - **Hints** — progressive: gentle → specific → near-answer
 
-Use these slash commands inside Claude Code:
+Use these skills inside Claude Code:
 
-| Command | Description |
+| Skill | Description |
 |---|---|
-| `/start` | Begin or resume the next exercise |
-| `/check` | Validate your current exercise |
-| `/hint` | Get a progressive hint (up to 3 levels) |
-| `/status` | View your progress dashboard |
-| `/reset` | Restart the current exercise from scratch |
-| `/setup` | Configure permissions for fewer prompts |
+| `/cclab:start` | Begin or resume the next exercise |
+| `/cclab:check` | Validate your current exercise |
+| `/cclab:hint` | Get a progressive hint (up to 3 levels) |
+| `/cclab:status` | View your progress dashboard |
+| `/cclab:reset` | Restart the current exercise from scratch |
+| `/cclab:setup` | Configure permissions for fewer prompts |
 
 ## Exercises
 

@@ -4,9 +4,9 @@
   "description": "Learn Claude Code by doing — progressive, validated exercises directly inside Claude Code",
   "author": {
     "name": "Thanh",
-    "url": "https://github.com/3t-dev/claudelab"
+    "url": "https://github.com/fibonax/claudelab"
   },
-  "repository": "https://github.com/3t-dev/claudelab",
+  "repository": "https://github.com/fibonax/claudelab",
   "license": "AGPL-3.0",
   "keywords": ["learning", "tutorial", "exercises", "fundamentals"],
   "skills": "./.claude/skills/"

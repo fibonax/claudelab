@@ -30,7 +30,7 @@ Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) before contributing. It 
    ```
 3. Add the upstream remote:
    ```bash
-   git remote add upstream https://github.com/3t-dev/claudelab.git
+   git remote add upstream https://github.com/fibonax/claudelab.git
    ```
 4. Install [Claude Code](https://docs.anthropic.com/en/docs/claude-code) if you haven't already — it's both the runtime and the development tool for this project.
 

@@ -75,10 +75,10 @@ More tracks planned: **Advanced**.
 claude
 
 # 2. Add the plugin marketplace
-/plugin marketplace add 3t-dev/claudelab
+/plugin marketplace add fibonax/claudelab
 
 # 3. Install the plugin
-/plugin install cclab@3t-dev-claudelab
+/plugin install cclab@fibonax-claudelab
 
 # 4. Start learning
 /start
@@ -90,7 +90,7 @@ If you prefer to install from a local clone:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/3t-dev/claudelab.git
+git clone https://github.com/fibonax/claudelab.git
 
 # 2. Launch Claude Code from the cloned directory
 cd claudelab

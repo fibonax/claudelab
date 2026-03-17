@@ -167,6 +167,33 @@ The setup script is idempotent — safe to run multiple times. It creates the wo
 
 If setup.sh does not exist, skip this step silently.
 
+### Step 7.5: Display progress one-liner
+
+Using the exercise list from Step 3 and the `completed` array from Step 4, calculate:
+
+- `total_completed` = number of entries in `completed`
+- `total_exercises` = total exercises across all tracks
+- For each track: `<track_completed>/<track_total>`
+
+Display a single progress line:
+
+```
+Progress: <total_completed>/<total_exercises> exercises · Fundamentals <fund_completed>/<fund_total> · Workflows <wf_completed>/<wf_total>
+```
+
+Then on the next line:
+
+```
+Run /cclab:status to see the full exercise list.
+```
+
+**Example output:**
+
+```
+Progress: 5/16 exercises · Fundamentals 5/8 · Workflows 0/8
+Run /cclab:status to see the full exercise list.
+```
+
 ### Step 8: Present the exercise
 
 1. Read `$PLUGIN_ROOT/exercises/<TRACK>/<current_exercise>/metadata.json` — extract `title`, `difficulty`, `estimatedMinutes`, `track`

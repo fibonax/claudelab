@@ -23,6 +23,7 @@
     "./.claude/skills/hint/",
     "./.claude/skills/status/",
     "./.claude/skills/reset/",
-    "./.claude/skills/setup/"
+    "./.claude/skills/setup/",
+    "./.claude/skills/help/"
   ]
 }

@@ -1,5 +1,5 @@
 ---
-name: setup
+name: cclab:setup
 description: Configure permissions for a smoother cclab learning experience. Adds allow rules so Claude can read/write exercise files without repeated prompts. Use when the user says "setup", "configure permissions", "stop asking me", or wants to reduce permission prompts.
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: start
+name: cclab:start
 description: Begin or resume the cclab learning experience. Loads the current exercise, runs setup, and presents instructions. Use when the user says "start", "begin", "resume", "next exercise", or wants to start learning Claude Code.
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: status
+name: cclab:status
 description: Show progress dashboard with track overview, completion percentage, and current position. Use when the user says "status", "progress", "how far", "dashboard", or wants to see their learning progress.
 ---
 

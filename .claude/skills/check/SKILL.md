@@ -1,5 +1,5 @@
 ---
-name: check
+name: cclab:check
 description: Validate the current exercise and report pass/fail. Updates progress on success. Use when the user says "check", "validate", "verify", "am I done?", "did I pass?", or wants to test their work.
 ---
 

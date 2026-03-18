@@ -1,5 +1,5 @@
 ---
-name: help
+name: cclab:help
 description: Show a summary of all available cclab skills with commands, descriptions, and quick examples. Use when the user says "help", "commands", "what can I do", "how does cclab work", or wants to see available skills.
 ---
 

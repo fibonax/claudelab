@@ -1,5 +1,5 @@
 ---
-name: hint
+name: cclab:hint
 description: Show a progressive hint for the current exercise. Each call reveals a more specific hint (up to 3 levels). Use when the user says "hint", "help me", "I'm stuck", "give me a clue", or needs guidance on the current exercise.
 ---
 

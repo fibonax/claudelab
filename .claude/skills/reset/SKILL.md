@@ -1,5 +1,5 @@
 ---
-name: reset
+name: cclab:reset
 description: Reset the current exercise by restoring its workspace and clearing hint progress. Use when the user says "reset", "restart", "start over", "redo", or wants to redo the current exercise from scratch.
 ---
 

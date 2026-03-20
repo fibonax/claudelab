@@ -107,6 +107,29 @@ claude
 > **Note:** Your exercise files are created in `~/.cclab/workspace/`, not in the
 > cloned repository. The plugin source directory stays clean.
 
+### Start Learning
+
+Once installed, use these commands inside Claude Code to work through exercises:
+
+```bash
+# Begin or resume the next exercise
+/cclab:start
+
+# Check your solution
+/cclab:check
+
+# Stuck? Get a progressive hint (up to 3 levels)
+/cclab:hint
+
+# See your overall progress
+/cclab:status
+
+# Restart the current exercise from scratch
+/cclab:reset
+```
+
+Each exercise builds on the last — just run `/cclab:start` after completing one to move to the next.
+
 ## cclab-validator
 
 `cclab-validator` is a Rust CLI tool (in `tools/cclab-validator/`) that tests exercise solvability end-to-end. It spawns Claude Code to solve each exercise as a real learner would — running `/start`, solving the exercise, then running `/check` — and reports pass/fail.

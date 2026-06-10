@@ -1,0 +1,10 @@
+{
+  "id": "adv-003",
+  "title": "Server Smith",
+  "track": "advanced",
+  "difficulty": "advanced",
+  "order": 3,
+  "prerequisites": ["wf-007"],
+  "estimatedMinutes": 25,
+  "concept": "Authoring a stdio MCP server — JSON-RPC over stdin/stdout"
+}

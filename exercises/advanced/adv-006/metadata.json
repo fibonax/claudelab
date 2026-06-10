@@ -1,0 +1,10 @@
+{
+  "id": "adv-006",
+  "title": "Plugin Architect",
+  "track": "advanced",
+  "difficulty": "advanced",
+  "order": 6,
+  "prerequisites": ["adv-002", "adv-005"],
+  "estimatedMinutes": 25,
+  "concept": "Capstone — package a skill and a hook into a distributable plugin"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "adv-001",
+  "title": "Specialist Squad",
+  "track": "advanced",
+  "difficulty": "advanced",
+  "order": 1,
+  "prerequisites": ["wf-005"],
+  "estimatedMinutes": 15,
+  "concept": "Subagent specialization — tools, disallowedTools, model, permissionMode"
+}

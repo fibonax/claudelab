@@ -1,0 +1,10 @@
+{
+  "id": "adv-005",
+  "title": "Forked Context",
+  "track": "advanced",
+  "difficulty": "advanced",
+  "order": 5,
+  "prerequisites": ["wf-004"],
+  "estimatedMinutes": 15,
+  "concept": "Skills with named arguments and context: fork"
+}

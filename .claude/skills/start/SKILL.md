@@ -42,7 +42,7 @@ The banner must appear exactly like this (the triple backticks are part of your 
  / ____/ ____| |        /\   |  _ \
 | |   | |    | |       /  \  | |_) |
 | |   | |    | |      / /\ \ |  _ <      cclab: learn Claude Code inside Claude Code
-| |___| |____| |____ / ____ \| |_) |     v0.2.1 · 2 tracks · 16 exercises
+| |___| |____| |____ / ____ \| |_) |     v0.2.1 · 3 tracks · 23 exercises
  \_____\_____|______/_/    \_\____/      thanhtt@fibonax.dev
 ```
 ````
@@ -118,8 +118,9 @@ Using the ordered exercise list from Step 3 and the `completed` array from progr
 Display:
 
 ```
-You've completed all cclab tracks — Fundamentals and Workflows!
-You've mastered CLAUDE.md, prompting, git, hooks, skills, subagents, MCP, and worktrees.
+You've completed all cclab tracks — Fundamentals, Workflows, and Advanced!
+You've mastered CLAUDE.md, prompting, git, hooks, skills, subagents, MCP
+servers (configuring AND building them), parallel worktrees, and plugins.
 Go build something amazing with your new Claude Code superpowers!
 ```
 

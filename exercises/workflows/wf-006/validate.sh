@@ -64,10 +64,11 @@ else
     PASS=false
   fi
 
-  # Check 9: implementer mentions Edit or Write (has write access)
-  if ! grep -qiE "(Edit|Write)" "$WORKSPACE/.claude/agents/implementer.md"; then
-    echo "FAIL: implementer.md doesn't mention Edit or Write"
-    echo "  The agent needs write access — include Edit and/or Write in its tools."
+  # Check 9: the tools: line grants write access (Edit or Write)
+  TOOLS_LINE=$(grep -i "^tools:" "$WORKSPACE/.claude/agents/implementer.md")
+  if ! printf '%s' "$TOOLS_LINE" | grep -qiE "(Edit|Write)"; then
+    echo "FAIL: the implementer's tools: line doesn't include Edit or Write"
+    echo "  The agent needs write access — add Edit and/or Write to the tools: list."
     PASS=false
   fi
 fi
@@ -103,11 +104,14 @@ if [ ! -d "$WORKSPACE/results" ]; then
   echo "  Run your implementer subagents to create results in the results/ directory."
   PASS=false
 else
-  # Check 14: at least 2 files in results/
-  FILE_COUNT=$(ls -1 "$WORKSPACE/results/" 2>/dev/null | wc -l | tr -d ' ')
+  # Check 14: at least 2 NON-EMPTY files in results/
+  FILE_COUNT=0
+  for f in "$WORKSPACE/results/"*; do
+    [ -f "$f" ] && [ -s "$f" ] && FILE_COUNT=$((FILE_COUNT + 1))
+  done
   if [ "$FILE_COUNT" -lt 2 ]; then
-    echo "FAIL: results/ has fewer than 2 files (found $FILE_COUNT)"
-    echo "  Spawn at least 2 subagents that each write a result file to results/."
+    echo "FAIL: results/ has fewer than 2 non-empty files (found $FILE_COUNT)"
+    echo "  Spawn at least 2 subagents that each write a result file (with content) to results/."
     PASS=false
   fi
 fi

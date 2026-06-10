@@ -29,6 +29,10 @@ if [ -d "$WORKSPACE/.git" ]; then
   # Delete the feature branch if it exists
   git -C "$WORKSPACE" branch -D feature/improve-auth 2>/dev/null
 
+  # Remove leftover worktree directories (git worktree remove can leave empty dirs)
+  rm -rf "$WORKSPACE/.worktrees"
+  mkdir -p "$WORKSPACE/.worktrees"
+
   # Switch to main if not already there
   git -C "$WORKSPACE" checkout main 2>/dev/null
 fi

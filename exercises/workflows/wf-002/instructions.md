@@ -34,7 +34,7 @@ Claude Code has three permission levels:
 Permission rules use a `Tool(specifier)` pattern:
 
 - `"Read"` -- matches all Read operations
-- `"Bash(npm *)"` -- matches Bash commands starting with `npm`
+- `"Bash(npm *)"` -- matches `npm` followed by a space and any arguments (the space is a word boundary: `npm test` matches, but a command like `npmx` does not)
 - `"Edit(.env)"` -- matches editing the `.env` file
 - `"Edit(/secrets/**)"` -- matches editing any file under `secrets/`
 - `"Bash(rm *)"` -- matches any `rm` command

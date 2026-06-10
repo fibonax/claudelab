@@ -17,6 +17,7 @@
     "fundamentals",
     "claude-code"
   ],
+  "hooks": "./hooks/hooks.json",
   "skills": [
     "./.claude/skills/start/",
     "./.claude/skills/check/",

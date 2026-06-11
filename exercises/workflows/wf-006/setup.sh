@@ -4,6 +4,12 @@
 
 WORKSPACE="$HOME/.cclab/workspace/wf-006"
 
+# Reset learner-created artifacts so /cclab:reset restores the initial state
+rm -rf "$WORKSPACE/.claude/skills/plan"
+rm -f  "$WORKSPACE/.claude/agents/implementer.md"
+rm -f  "$WORKSPACE/plan.md"
+rm -rf "$WORKSPACE/results"
+
 mkdir -p "$WORKSPACE/src/api"
 mkdir -p "$WORKSPACE/src/services"
 mkdir -p "$WORKSPACE/src/utils"

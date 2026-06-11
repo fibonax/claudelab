@@ -35,17 +35,37 @@ if ! grep -q '"deny"' "$SETTINGS"; then
   PASS=false
 fi
 
-# Check 5: mentions .env or secrets (sensitive file protection)
-if ! grep -qiE '(\.env|secrets)' "$SETTINGS"; then
-  echo "FAIL: settings.json doesn't protect sensitive files"
+# Extract the deny and allow array blocks so placement checks are scoped
+# (a deny rule for .env must live in deny, not allow)
+DENY_BLOCK=$(sed -n '/"deny"/,/\]/p' "$SETTINGS")
+ALLOW_BLOCK=$(sed -n '/"allow"/,/\]/p' "$SETTINGS")
+
+# Check 5: the DENY rules mention .env or secrets (sensitive file protection)
+if ! printf '%s' "$DENY_BLOCK" | grep -qiE '(\.env|secrets)'; then
+  echo "FAIL: the deny rules don't protect sensitive files"
   echo "  Add deny rules for .env and/or secrets/ files (e.g., \"Edit(.env)\", \"Edit(/secrets/**)\")."
+  echo "  Note: these must be inside the \"deny\" array — allowing them does the opposite!"
   PASS=false
 fi
 
-# Check 6: mentions Bash, Read, or Edit (tool-specific rules)
-if ! grep -qE '(Bash|Read|Edit)' "$SETTINGS"; then
-  echo "FAIL: settings.json doesn't include tool-specific rules"
-  echo "  Use tool patterns like \"Read\", \"Bash(npm *)\", or \"Edit(.env)\" in your rules."
+# Check 6: the deny rules use tool-specific patterns (Tool or Tool(specifier))
+if ! printf '%s' "$DENY_BLOCK" | grep -qE '"(Bash|Read|Edit|Write|Glob|Grep|WebFetch)'; then
+  echo "FAIL: deny rules don't use tool-specific patterns"
+  echo "  Deny entries must name a tool, e.g. \"Edit(.env)\" or \"Bash(rm -rf *)\" — a bare path has no effect."
+  PASS=false
+fi
+
+# Check 6b: at least 3 allow rules and 2 deny rules (as the instructions require)
+ALLOW_COUNT=$(printf '%s' "$ALLOW_BLOCK" | grep -oE '"[A-Z][A-Za-z]*(\([^)]*\))?"' | wc -l | tr -d ' ')
+if [ "$ALLOW_COUNT" -lt 3 ]; then
+  echo "FAIL: only $ALLOW_COUNT allow rule(s) found (need at least 3)"
+  echo "  Add more allow rules, e.g. \"Read\", \"Grep\", \"Bash(npm *)\"."
+  PASS=false
+fi
+DENY_COUNT=$(printf '%s' "$DENY_BLOCK" | grep -oE '"[A-Z][A-Za-z]*(\([^)]*\))?"' | wc -l | tr -d ' ')
+if [ "$DENY_COUNT" -lt 2 ]; then
+  echo "FAIL: only $DENY_COUNT deny rule(s) found (need at least 2)"
+  echo "  Add more deny rules, e.g. \"Edit(.env)\", \"Bash(rm -rf *)\"."
   PASS=false
 fi
 

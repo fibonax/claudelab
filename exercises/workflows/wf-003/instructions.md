@@ -33,7 +33,7 @@ Here's the anatomy of a SKILL.md:
 ```markdown
 ---
 name: my-command
-description: A short description of what this command does
+description: Use this when the user asks you to [do the task this skill covers]
 ---
 
 # My Command
@@ -45,9 +45,14 @@ Instructions for Claude go here. Be specific about:
 3. What output to produce
 ```
 
-The `name` field is the command identifier. The `description` field appears in
-help text. The body contains the actual instructions Claude follows when the
-command is invoked.
+The `name` field is the command identifier. The `description` field does more
+than fill help text — Claude reads it to decide when to invoke the skill
+automatically, so write it as a "when to use this" statement (e.g. "Use this
+when the user asks you to explain a source file"). The body contains the
+actual instructions Claude follows when the command is invoked.
+
+Skills in `.claude/skills/` belong to this project only. To make a skill
+available in every project, put it in `~/.claude/skills/` instead.
 
 ## Your Task
 

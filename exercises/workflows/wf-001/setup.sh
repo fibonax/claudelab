@@ -4,6 +4,11 @@
 
 WORKSPACE="$HOME/.cclab/workspace/wf-001"
 
+# Reset learner-created artifacts so /cclab:reset restores the initial state
+rm -f "$WORKSPACE/.claude/settings.json" \
+      "$WORKSPACE/scripts/log-edits.sh" \
+      "$WORKSPACE/edit-log.txt"
+
 mkdir -p "$WORKSPACE/src"
 
 # src/app.ts — a small TypeScript application

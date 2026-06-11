@@ -1,0 +1,16 @@
+{
+  "description": "cclab tool logging — records which tools are used inside exercise workspaces so exercises can validate the process (e.g. 'use the Edit tool'), not just the artifact. Only logs tool calls that touch ~/.cclab/workspace/.",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|Read|Grep|Glob|Bash|Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/tools/log-tool.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

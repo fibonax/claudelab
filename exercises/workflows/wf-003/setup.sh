@@ -4,6 +4,9 @@
 
 WORKSPACE="$HOME/.cclab/workspace/wf-003"
 
+# Reset learner-created artifacts so /cclab:reset restores the initial state
+rm -rf "$WORKSPACE/.claude/skills/explain-code"
+
 mkdir -p "$WORKSPACE/src"
 mkdir -p "$WORKSPACE/.claude/skills"
 

@@ -58,11 +58,13 @@ cclab/
 │       └── exercise-reviewer.md        # QA subagent for exercises
 │
 ├── exercises/                          # Pre-built exercise content (read-only)
-│   └── fundamentals/                   # Track: 8 exercises (cc-001..cc-008)
-│       └── cc-NNN/                     # Each exercise folder contains:
+│   ├── fundamentals/                   # Track: 9 exercises (cc-001..cc-009)
+│   ├── workflows/                      # Track: 8 exercises (wf-001..wf-008)
+│   └── advanced/                       # Track: 6 exercises (adv-001..adv-006)
+│       └── <id>/                       # Each exercise folder contains:
 │           ├── metadata.json           #   ID, track, difficulty, prereqs
 │           ├── instructions.md         #   What the learner sees
-│           ├── setup.sh                #   Scaffolds ~/.cclab/workspace/cc-NNN/
+│           ├── setup.sh                #   Scaffolds ~/.cclab/workspace/<id>/
 │           ├── validate.sh             #   Deterministic pass/fail checks
 │           └── hints.md                #   3 progressive hint levels
 │
@@ -93,7 +95,7 @@ cclab/
 
 ## Development Rules
 - Every exercise MUST have at least one validation test.
-- Exercise IDs use the format: `cc-NNN` (e.g., cc-001, cc-002).
+- Exercise IDs use the format: `cc-NNN` (fundamentals), `wf-NNN` (workflows), `adv-NNN` (advanced).
 - Exercises are grouped into tracks: fundamentals, skills, workflows, advanced.
 - Each exercise has: metadata, setup script, instructions (markdown), validation script, hints (progressive).
 - When creating a new exercise, use the `/create-exercise` skill.

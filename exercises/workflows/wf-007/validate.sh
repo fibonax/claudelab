@@ -22,7 +22,7 @@ if ! grep -q '"mcpServers"' "$WORKSPACE/.mcp.json"; then
 fi
 
 # Check 3: .mcp.json contains "timestamp" or "timestamp-server"
-if ! grep -qiE '"timestamp"' "$WORKSPACE/.mcp.json"; then
+if ! grep -qiE '"timestamp(-server)?"' "$WORKSPACE/.mcp.json"; then
   echo "FAIL: .mcp.json missing a server named \"timestamp\" or \"timestamp-server\""
   echo "  Add a server entry with a name like \"timestamp\" under mcpServers."
   PASS=false
@@ -32,6 +32,13 @@ fi
 if ! grep -q '"command"' "$WORKSPACE/.mcp.json"; then
   echo "FAIL: .mcp.json missing \"command\" field"
   echo "  The server config needs a \"command\" field specifying how to run the server."
+  PASS=false
+fi
+
+# Check 4b: .mcp.json contains "type" (stdio transport)
+if ! grep -q '"type"' "$WORKSPACE/.mcp.json"; then
+  echo "FAIL: .mcp.json missing \"type\" field"
+  echo "  The server entry needs \"type\": \"stdio\" so Claude Code knows the transport."
   PASS=false
 fi
 
@@ -50,10 +57,11 @@ if [ ! -f "$WORKSPACE/.claude/settings.json" ]; then
   echo "  Create .claude/settings.json with MCP tool permissions."
   PASS=false
 else
-  # Check 7: settings.json contains MCP permission pattern
-  if ! grep -qE 'mcp__|mcp_' "$WORKSPACE/.claude/settings.json"; then
+  # Check 7: settings.json contains MCP permission pattern (double underscore —
+  # MCP tools are always named mcp__<server>__<tool>)
+  if ! grep -q 'mcp__' "$WORKSPACE/.claude/settings.json"; then
     echo "FAIL: .claude/settings.json missing MCP permission pattern"
-    echo "  Add an allow entry like \"mcp__timestamp__*\" to grant access to MCP tools."
+    echo "  Add an allow entry like \"mcp__timestamp__*\" — note the DOUBLE underscores."
     PASS=false
   fi
 fi

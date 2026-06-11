@@ -1,0 +1,10 @@
+{
+  "id": "adv-004",
+  "title": "Parallel Worlds",
+  "track": "advanced",
+  "difficulty": "advanced",
+  "order": 4,
+  "prerequisites": ["wf-008"],
+  "estimatedMinutes": 20,
+  "concept": "Parallel git worktrees — two features at once, merged back"
+}

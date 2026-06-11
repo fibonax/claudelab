@@ -67,7 +67,17 @@ The setup script is idempotent — it recreates the workspace directory and rest
 If setup.sh does not exist, tell the user:
 "No setup script found for <current_exercise>. Workspace was not modified."
 
-### Step 6: Clear hint progress
+### Step 6: Clear the tool-usage log
+
+Delete the exercise's tool log if it exists, so stale tool-usage data from before the reset cannot satisfy process validation:
+
+```bash
+rm -f "$HOME/.cclab/workspace/<current_exercise>/.tool_log.jsonl"
+```
+
+(Note: setup.sh recreates the workspace directory but must not be relied on to remove this hidden file.)
+
+### Step 7: Clear hint progress
 
 Update `~/.cclab/progress.json`:
 - Set `hints_seen.<current_exercise>` to `0` (or remove the entry)
@@ -77,7 +87,7 @@ Update `~/.cclab/progress.json`:
 
 Write the updated JSON back to the file.
 
-### Step 7: Confirm reset
+### Step 8: Confirm reset
 
 Display:
 

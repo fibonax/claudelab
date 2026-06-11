@@ -1,0 +1,10 @@
+{
+  "id": "adv-002",
+  "title": "Iron Gate",
+  "track": "advanced",
+  "difficulty": "advanced",
+  "order": 2,
+  "prerequisites": ["wf-001"],
+  "estimatedMinutes": 20,
+  "concept": "Blocking PreToolUse hooks — stdin JSON and exit 2 semantics"
+}

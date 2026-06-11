@@ -1,0 +1,10 @@
+{
+  "id": "cc-009",
+  "title": "Master the Edit Tool",
+  "track": "fundamentals",
+  "difficulty": "intermediate",
+  "order": 9,
+  "prerequisites": ["cc-005"],
+  "estimatedMinutes": 10,
+  "concept": "The Edit tool — surgical changes instead of full-file rewrites"
+}

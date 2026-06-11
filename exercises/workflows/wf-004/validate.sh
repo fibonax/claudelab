@@ -14,15 +14,24 @@ if [ ! -f "$SKILL_FILE" ]; then
   exit 1
 fi
 
-# Check 2: SKILL.md contains name: with a value
-if ! grep -qE "^name:\s*\S" "$SKILL_FILE"; then
+# Extract the frontmatter block (between the first pair of --- delimiters)
+# so field checks can't be satisfied by text in the markdown body
+FRONTMATTER=$(sed -n '/^---$/,/^---$/p' "$SKILL_FILE")
+if [ -z "$FRONTMATTER" ]; then
+  echo "FAIL: SKILL.md has no YAML frontmatter"
+  echo "  Start the file with --- on its own line, the YAML fields, then a closing ---."
+  PASS=false
+fi
+
+# Check 2: frontmatter contains name: with a value
+if ! printf '%s\n' "$FRONTMATTER" | grep -qE "^name:[[:space:]]*[^[:space:]]"; then
   echo "FAIL: SKILL.md missing name: field with a value in frontmatter"
   echo "  Add a name field like: name: refactor"
   PASS=false
 fi
 
-# Check 3: SKILL.md contains description:
-if ! grep -q "^description:" "$SKILL_FILE"; then
+# Check 3: frontmatter contains description:
+if ! printf '%s\n' "$FRONTMATTER" | grep -q "^description:"; then
   echo "FAIL: SKILL.md missing description: field in frontmatter"
   echo "  Add a description field explaining what the skill does."
   PASS=false
@@ -35,15 +44,15 @@ if ! grep -qE '(\$ARGUMENTS|\$0)' "$SKILL_FILE"; then
   PASS=false
 fi
 
-# Check 5: SKILL.md contains argument-hint:
-if ! grep -q "^argument-hint:" "$SKILL_FILE"; then
+# Check 5: frontmatter contains argument-hint:
+if ! printf '%s\n' "$FRONTMATTER" | grep -q "^argument-hint:"; then
   echo "FAIL: SKILL.md missing argument-hint: in frontmatter"
   echo "  Add argument-hint: <file-path> to show users what argument to provide."
   PASS=false
 fi
 
-# Check 6: SKILL.md contains disable-model-invocation: true
-if ! grep -qE "^disable-model-invocation:\s*true" "$SKILL_FILE"; then
+# Check 6: frontmatter contains disable-model-invocation: true
+if ! printf '%s\n' "$FRONTMATTER" | grep -qE "^disable-model-invocation:[[:space:]]*true"; then
   echo "FAIL: SKILL.md missing disable-model-invocation: true in frontmatter"
   echo "  Add disable-model-invocation: true to prevent automatic invocation."
   PASS=false

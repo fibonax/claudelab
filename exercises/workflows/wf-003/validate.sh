@@ -13,10 +13,14 @@ if [ ! -f "$SKILL_FILE" ]; then
   exit 1
 fi
 
-# Check 2: Frontmatter contains name: field
+# Check 2: Frontmatter contains name: field with the expected value
 if ! grep -q "^name:" "$SKILL_FILE"; then
   echo "FAIL: SKILL.md missing 'name:' in frontmatter"
   echo "  Add a name: field between the --- delimiters at the top of the file."
+  PASS=false
+elif ! grep -qE "^name:[[:space:]]*explain-code[[:space:]]*$" "$SKILL_FILE"; then
+  echo "FAIL: the name: field must be exactly 'explain-code'"
+  echo "  The skill is invoked as /explain-code, so the name must match: name: explain-code"
   PASS=false
 fi
 
@@ -36,10 +40,17 @@ if [ "$DELIMITER_COUNT" -lt 2 ]; then
 fi
 
 # Check 5: Contains at least 3 numbered steps
-STEP_COUNT=$(grep -cE "^[0-9]+\." "$SKILL_FILE" || true)
+STEP_COUNT=$(grep -cE "^[0-9]+\. " "$SKILL_FILE" || true)
 if [ "$STEP_COUNT" -lt 3 ]; then
   echo "FAIL: SKILL.md has fewer than 3 numbered steps (found $STEP_COUNT)"
   echo "  Include at least 3 numbered steps (e.g., 1. Read the file, 2. Analyze it, 3. Explain it)."
+  PASS=false
+fi
+
+# Check 5b: Has a title heading
+if ! grep -q "^# " "$SKILL_FILE"; then
+  echo "FAIL: SKILL.md missing a title heading"
+  echo "  Add a heading after the frontmatter, e.g. # Explain Code"
   PASS=false
 fi
 

@@ -5,6 +5,9 @@ Claude Code can connect to external tools through the **Model Context Protocol
 things like querying databases, calling APIs, or running custom scripts. You
 configure these connections so Claude discovers and uses them automatically.
 
+> **Prerequisite:** this exercise's sample server needs Python 3 (standard
+> library only — no pip installs). Check with `python3 --version`.
+
 ## How MCP Works
 
 MCP uses a client-server architecture. Claude Code is the **client**. You
